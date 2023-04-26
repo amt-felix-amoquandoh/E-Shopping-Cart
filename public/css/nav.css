@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700;800&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 80px;
+    background: var(--main-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 80px;
+}
+
+.logoBox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logoBox h3{
+    color: var(--secondary-color);
+    font-size: larger;
+    text-transform: capitalize;
+  }
+
+.secondHeader{
+    background: var(--alternate1);
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: static;
+}
+
+.searchBox{
+    width: 500px;
+    display: flex;
+}
+
+.searchInput{
+    width: 80%;
+    height: 40px;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 1px solid #d1d1d1;
+    text-transform: capitalize;
+    background: white;
+    color: #a9a9a9;
+
+}
+
+.searchBtn{
+    width: 20%;
+    height: 40px;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: var(--main-color);
+    color: var(--secondary-color);
+    text-transform: capitalize;
+    font-size: 15px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.navItems{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+
+.mobileNav{
+    display: none;
+    align-items: center;
+}
+
+.navItems li{
+    list-style: none;
+    padding: 0 20px;
+    margin-top: 5px;
+    position: relative;
+   
+}
+
+.navItems li a{
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--light-color);
+    position: relative;
+}
+
+.mobileLogo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.hide{
+    display: none;
+}
+
+.navItems li a:hover{
+    color: var(--secondary-color);
+}
+
+.navItems li a.active::after{
+    content: "";
+    width: 30%;
+    height: 4px;
+    background: var(--secondary-color);
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+.navBrandImage{
+    height: 6rem;
+    margin-right: -21px;  
+}
+
+.cartBox{
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.carty{
+    position: relative;
+    padding: 3px 0px 2px 20px;
+  }
+
+.cartAmount{
+    font-size: 16px;
+    background-color: var(--dark-color);
+    color: var(--secondary-color);
+    position: absolute;
+    top: -6px;
+    right: -14px;
+    padding: 3px 7px;
+    border-radius: 5px;
+  }
+
+.loginArea{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginPopUp{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) ;
+    padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+    top: 40px;
+    width: 200px;
+    transition: 0.5s;
+    border: 2px solid #f5f5f5;
+}
+
+.loginPopUp::after{
+    content: "";
+    position: absolute;
+    top: -7.5px;
+    left: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.accountInfo{
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+#userBtn{
+    padding: 10px;
+    background: #383838;
+    color: #fff;
+    border: none;
+    outline: none;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.hide{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.shopIcon{
+    height: 2rem;
+    position: relative;
+    width: auto;
+    margin-top: 4px;
+    margin-left: -15px;
+    transition: 0.3s ease-out;
+}
+
+.cartBox ion-icon{
+    margin-left: 10px;
+}
+
+.mobileMenuClose{
+    display: none;
+}

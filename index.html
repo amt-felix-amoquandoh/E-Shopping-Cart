@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./img/icons/brand.png"
+    />
+    <title>Kosafrique | Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    /> -->
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+/>
+    <link rel="stylesheet" href="./css/home.css" />
+  </head>
+  <body>
+    <!-- Project starts here-->
+    <!-- Nav Bar section -->
+    <section class="header" id="header">
+        <div class="logoBox">          
+            <img src="./img/icons/brand.png" class="navBrandImage" alt="" />
+          <h3><i>Kosafrique</i></h3>
+        </div>
+          <ul class="navItems" id="navItems">
+            <li><a href="./index.html" class="active">Shop</a></li>
+            <li><a href="./aboutus.html">About Us</a></li>
+            <li class=""> <span class="loginArea" id="loginArea">
+             
+              <img width="40px" height="40px" src="./img/icons/user.png" 
+              class="userLogo" alt="">
+              
+              <div class="loginPopUp hide">
+                <p class="accountInfo">Logged in as, <b>name</b></p>
+                <button class="btn" id="userBtn">Log out</button>
+              </div>
+            </span>
+            <div class="mobileLogo hide">          
+              <img width="auto" height="90px" src="./img/icons/brand.png" class="navBrandImage" alt="" />
+            <h3><i>Kosafrique</i></h3>
+          </div>
+    
+            
+          </li>
+            <li>
+              <a href="">
+                <div class="cartBox">
+                  <div class="carty">
+                    <img src="./img/icons/shop-bag.png" class="shopIcon" alt="" />
+                    <div class="cartAmount" id="itemsUpdate">0</div>
+                  </div>               
+              </div>
+              </a>
+            </li>
+            <a href="#">
+              <ion-icon
+                id="mobileMenuClose"
+                class="mobileMenuClose"
+                size="large"
+                name="close-circle-outline"
+              ></ion-icon>
+            </a>
+          </ul>
+        
+        <div id="mobile" class="mobileNav">
+          <a class="mobileCart" href="./orders.html">
+            <div>
+              <div class="carty">
+                <img src="./img/icons/shop-bag.png" class="shopIcon" alt="" />
+                <div class="cartAmount" id="itemsUpdate">0</div>
+              </div>   
+            </div>
+          </a>
+          <img width="40px" height="40px" src="./img/icons/menu.png" id="mobileMenu"
+          class="mobileMenu" alt="">
+        </div>
+      </section>
+               <!--  -->
+      <section class="header secondHeader" id="header">
+        <div class="searchBox">
+          <input type="text" class="searchInput" placeholder="search product, brand">
+          <button class="searchBtn">Search</button>
+        </div>
+      </section>
+    <!-- Nav Bar section -->
+
+    <!-- HEro Section -->
+      <!-- Slider main container -->
+      <div class="newMusicSwiper swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="newMusicBox">
+                <img src="./img/accessories/1.jpg" alt="">
+                <div class="newMusicText">
+                    <h2 class="musicTitle">Welcome to <i>Kosafrique</i></h2>
+                    <span class="genre">Your one stock shop for African made Clothing and Accessories</span>
+                    <button class="shopButton">Shop now<i>!</i></button>
+                  </div>
+            </div>
+        </div>
+            <div class="swiper-slide">
+                <div class="newMusicBox">
+                    <img src="./img/pillow/p2.webp" alt="">
+                    <div class="newMusicText1">
+                        <h2 class="musicTitle">Checkout our Shops</h2>
+                        <span class="genre">African made pillows in all sizes</span>
+                        <p><a href="">Browse products</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="newMusicBox">
+                    <img src="./img/clothes/cl8.jpg" alt="">
+                    <div class="newMusicText1 mobile">
+                        <h2 class="musicTitle">African print Clothing</h2>
+                        <span class="genre"><i>Best pricing value and Quality</i></span>
+                        <button class="shopButton">Shop now<i>!</i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="newMusicBox">
+                    <img src="./img/accessories/acc5.jpg" alt="">
+                    <div class="newMusicText1 mobile">
+                        <h2 class="musicTitle">Native Designed Accessories</h2>
+                        <span class="genre">Accessories inspired by the African designs</span>
+                        <button class="shopButton">Shop now<i>!</i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="newMusicBox">
+                    <img src="./img/clothes/cl5.jpg" alt="">
+                    <div class="newMusicText1 mobile">
+                        <h2 class="musicTitle">African made:</h2>
+                        <ul style="margin-top: -1rem;"><li>Lingerie and Sportswear</li>
+                          
+                        </ul>
+                        <p><a href="">Browse products</a></p>
+                    </div>
+                </div>
+            </div>          
+            <!-- <div class="swipeButtons">
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+             
+          </div> -->          
+        </div>
+    </div>
+    
+    <!-- HEro Section -->
+
+    <!-- Products Section -->
+       <!--  -->
+    <section class="sectionOfProducts">
+      <aside>
+          <div class="filterArea">
+              <h6 class="filter">
+                  <i class="bi bi-funnel-fill"></i> Filter : Products
+              </h6>
+                  <p class="productItems">
+                      All Items: <span>214</span>
+                  </p>
+                  <div class="itemsCheck">
+                      <div class="clothesChecked">
+                          <h6>Categories</h6>
+                          <i class="bi bi-node-minus-fill"></i>
+                      </div>
+                      <li>Clothing<i id="clothes" class="bi bi-toggle2-off" title="clothesOn"></i></li>
+                      <li>Accessories<i id="accessories" class="bi bi-toggle2-off" title="accessoriesOn"></i></li>
+                      <li>Sports Wear<i id="sports" class="bi bi-toggle2-off" title="sportsOn"></i></li>
+                      <li>Lingerie<i id="lingerie" class="bi bi-toggle2-off" title="lingerieOn"></i></li>
+                      <li>Pillow Cases<i id="pillowcases" class="bi bi-toggle2-off" title="pillowOn"></i></li>
+                  </div>
+                  <!--  -->
+                  <div class="itemsCheck">
+                      <div class="clothesChecked">
+                          <h6>Group by</h6>
+                          <i class="bi bi-node-minus-fill"></i>
+                      </div>
+                      <li>Women<i class="bi bi-toggle2-off"></i></li>
+                      <li>Men<i class="bi bi-toggle2-off"></i></li>
+                      <li>Children<i class="bi bi-toggle2-off"></i></li>
+                  </div>
+                  <!--  -->
+                 
+                  <div class="itemsCheck">
+                      <div class="clothesChecked">
+                          <h6>Available Sizes</h6>
+                          <i class="bi bi-node-minus-fill"></i>
+                      </div>
+                      <div class="sizesBox">
+                          <h6 class="size">x-small</h6>
+                          <h6 class="size">small</h6>
+                          <h6 class="size">medium</h6>
+                          <h6 class="size">large</h6>
+                          <h6 class="size">x-large</h6>
+                          <h6 class="size">xx-large</h6>
+                      </div>
+                  </div>
+          </div>
+      </aside>
+      <div class="productsBox">
+          <section>
+              <div class="sortTitle">
+                  <h4><i>Kosafrique Shop</i></h4>
+                  <div class="sortSelect">
+                      <button id="durationSortBtn">
+                          <h5>Sort By</h5>
+                          <ion-icon name="chevron-down-outline"></ion-icon>
+                      </button>
+                      <div class="sortOptions">
+                          <li id="newest">Newest</li>
+                          <li id="allProducts">All products</li>
+                          <li id="lowPrice">Lowest</li>
+                          <li id="trendy">Highest</li>
+                      </div>
+                  </div>
+              </div>
+          </section>
+          <div class="mainProArea" id="mainProArea">
+              <a href="" class="itemCard">
+                  <img src="./img/clothes/c1.jpg" alt="">
+                  <h5 class="cardTitle" title="African Print Dress">African Print Dress</h5>
+                  <p>Women Clothing</p>
+                  <div class="itemPrice">
+                      <h5>$18.25</h5>
+                      <h5><del>$28.33</del></h5>
+                  </div>
+                  <div class="colorTag">
+                      <div class="stars">
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                        </div>
+                      <button>Buy</button>
+                  </div>
+              </a>
+              <a href="" class="itemCard">
+                <img src="./img/accessories/ac1.jpg" alt="">
+                  <h5 class="cardTitle" title="African Print Dress">African Print Dress</h5>
+                  <p>Women Clothing</p>
+                  <div class="itemPrice">
+                      <h5>$18.25</h5>
+                      <h5><del>$28.33</del></h5>
+                  </div>
+                  <div class="colorTag">
+                      <div class="stars">
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                        </div>
+                      <button>Buy</button>
+                  </div>
+              </a>
+              <a href="" class="itemCard">
+                <img src="./img/pillow/p1.jpg" alt="">
+                  <h5 class="cardTitle" title="African Print Dress">African Print Dress</h5>
+                  <p>Women Clothing</p>
+                  <div class="itemPrice">
+                      <h5>$18.25</h5>
+                      <h5><del>$28.33</del></h5>
+                  </div>
+                  <div class="colorTag">
+                      <div class="stars">
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                        </div>
+                      <button>Buy</button>
+                  </div>
+              </a>
+              <a href="" class="itemCard">
+                <img src="./img/lingerie/l12.jpg" alt="">
+                  <h5 class="cardTitle" title="African Print Dress">African Print Dress</h5>
+                  <p>Women Clothing</p>
+                  <div class="itemPrice">
+                      <h5>$18.25</h5>
+                      <h5><del>$28.33</del></h5>
+                  </div>
+                  <div class="colorTag">
+                      <div class="stars">
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                        </div>
+                      <button>Buy</button>
+                  </div>
+              </a>
+              <a href="" class="itemCard">
+                <img src="./img/clothes/cl1.jpg" alt="">
+                  <h5 class="cardTitle" title="African Print Dress">African Print Dress</h5>
+                  <p>Women Clothing</p>
+                  <div class="itemPrice">
+                      <h5>$18.25</h5>
+                      <h5><del>$28.33</del></h5>
+                  </div>
+                  <div class="colorTag">
+                      <div class="stars">
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                          <ion-icon name="star"></ion-icon>
+                        </div>
+                      <button>Buy</button>
+                  </div>
+              </a>
+              <a href="" class="itemCard">
+                <img src="./img/pillow/p2.webp" alt="">
+                <h5 class="cardTitle" title="African Print Dress">African Print Dress</h5>
+                <p>Women Clothing</p>
+                <div class="itemPrice">
+                    <h5>$18.25</h5>
+                    <h5><del>$28.33</del></h5>
+                </div>
+                <div class="colorTag">
+                    <div class="stars">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                      </div>
+                    <button>Buy</button>
+                </div>
+            </a>
+            <a href="" class="itemCard">
+              <img src="./img/accessories/acc3.jpg" alt="">
+                <h5 class="cardTitle" title="African Print Dress">African Print Dress</h5>
+                <p>Women Clothing</p>
+                <div class="itemPrice">
+                    <h5>$18.25</h5>
+                    <h5><del>$28.33</del></h5>
+                </div>
+                <div class="colorTag">
+                    <div class="stars">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                      </div>
+                    <button>Buy</button>
+                </div>
+            </a>
+            <a href="" class="itemCard">
+              <img src="./img/sportswear/sp2.jpg" alt="">
+                <h5 class="cardTitle" title="African Print Dress">African Print Dress</h5>
+                <p>Women Clothing</p>
+                <div class="itemPrice">
+                    <h5>$18.25</h5>
+                    <h5><del>$28.33</del></h5>
+                </div>
+                <div class="colorTag">
+                    <div class="stars">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                      </div>
+                    <button>Buy</button>
+                </div>
+            </a>
+            <a href="" class="itemCard">
+              <img src="./img/lingerie/l6.jpg" alt="">
+                <h5 class="cardTitle" title="African Print Dress">African Print Dress</h5>
+                <p>Women Clothing</p>
+                <div class="itemPrice">
+                    <h5>$18.25</h5>
+                    <h5><del>$28.33</del></h5>
+                </div>
+                <div class="colorTag">
+                    <div class="stars">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                      </div>
+                    <button>Buy</button>
+                </div>
+            </a>
+            <a href="" class="itemCard">
+              <img src="./img/sportswear/sp5.png" alt="">
+                <h5 class="cardTitle" title="African Print Dress">African Print Dress</h5>
+                <p>Women Clothing</p>
+                <div class="itemPrice">
+                    <h5>$18.25</h5>
+                    <h5><del>$28.33</del></h5>
+                </div>
+                <div class="colorTag">
+                    <div class="stars">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                      </div>
+                    <button>Buy</button>
+                </div>
+            </a>
+            <a href="" class="itemCard">
+              <img src="./img/clothes/c3.jpg" alt="">
+              <h5 class="cardTitle" title="African Print Dress">African Print Dress</h5>
+              <p>Women Clothing</p>
+              <div class="itemPrice">
+                  <h5>$18.25</h5>
+                  <h5><del>$28.33</del></h5>
+              </div>
+              <div class="colorTag">
+                  <div class="stars">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  <button>Buy</button>
+              </div>
+          </a>
+          <a href="" class="itemCard">
+            <img src="./img/accessories/acc2.jpg" alt="">
+              <h5 class="cardTitle" title="African Print Dress">African Print Dress</h5>
+              <p>Women Clothing</p>
+              <div class="itemPrice">
+                  <h5>$18.25</h5>
+                  <h5><del>$28.33</del></h5>
+              </div>
+              <div class="colorTag">
+                  <div class="stars">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  <button>Buy</button>
+              </div>
+          </a>
+          <a href="" class="itemCard">
+            <img src="./img/pillow/p2.jpg" alt="">
+              <h5 class="cardTitle" title="African Print Dress">African Print Dress</h5>
+              <p>Women Clothing</p>
+              <div class="itemPrice">
+                  <h5>$18.25</h5>
+                  <h5><del>$28.33</del></h5>
+              </div>
+              <div class="colorTag">
+                  <div class="stars">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  <button>Buy</button>
+              </div>
+          </a>
+          <a href="" class="itemCard">
+            <img src="./img/lingerie/l9.jpg" alt="">
+              <h5 class="cardTitle" title="African Print Dress">African Print Dress</h5>
+              <p>Women Clothing</p>
+              <div class="itemPrice">
+                  <h5>$18.25</h5>
+                  <h5><del>$28.33</del></h5>
+              </div>
+              <div class="colorTag">
+                  <div class="stars">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  <button>Buy</button>
+              </div>
+          </a>
+          <a href="" class="itemCard">
+            <img src="./img/sportswear/sp8.jpg" alt="">
+              <h5 class="cardTitle" title="African Print Dress">African Print Dress</h5>
+              <p>Women Clothing</p>
+              <div class="itemPrice">
+                  <h5>$18.25</h5>
+                  <h5><del>$28.33</del></h5>
+              </div>
+              <div class="colorTag">
+                  <div class="stars">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  <button>Buy</button>
+              </div>
+          </a>
+          </div>
+          <div class="pagination">
+              <a><ion-icon name="chevron-back-outline"></ion-icon></a>
+              <h6>Next Product Men's</h6>
+              <a><ion-icon name="chevron-forward-outline"></ion-icon></a>
+            </div>
+      </div>
+  </section>
+    <!-- Products Section -->
+
+
+    <section class="banner" id="banner">
+      <h4>Promo Sales %</h4>
+      <h2>Up to <span>70% off</span> - All Tshirts and Accessories</h2>
+      <button class="basic">Explore more<i>!</i></button>
+    </section>
+  
+      <!-- newsletter section -->
+      <section id="newsletter" class="newsletter section-p1 section-m1">
+        <div class="news">
+          <h4
+            class="animate__animated animate__bounce animate__repeat-3 animate__delay-4s"
+          >
+            Sign Up to see new Products.
+          </h4>
+          <p>
+            Get Social media and e-mail Updates <span>about the latest.</span>
+          </p>
+        </div>
+        <div class="signUpFrom">
+          <input type="text" placeholder="Add your email here" />
+          <button class="basic">Sign Up</button>
+        </div>
+      </section>
+      <!-- newsletter section ends here -->
+  
+      <!-- footere section -->
+      <div id="footer">
+         <span class="copyright">&copy; 2023 KOSAFRIQUE, Inc. All rights reserved</span>
+      </div>
+      <!-- footere section ends here -->
+  
+
+
+    
+
+    <!-- Project ends here-->
+  </body>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+  ></script>
+  
+  <script src="./js/home.js"></script>
+  <script src="./js/nav.js"></script>
+  <!-- <script src="./js/filter.js"></script> -->
+  <script type="module">
+    import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.min.js'
+  
+    const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    slidesPreview: 1,
+    spaceBetween: 10,
+    autoplay: {
+       delay: 7000,
+       disableOnInteraction: false,
+    },
+  
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    breakpoints: {
+      280:{
+        slidesPerView: 1,
+        spaceBetween: 10,
+      },
+      320:{
+        slidesPerView: 1,
+        spaceBetween: 10,
+      },
+      510:{
+        slidesPerView: 1,
+        spaceBetween: 10,
+      },
+      758:{
+        slidesPerView: 2,
+        spaceBetween: 15,
+      },
+      900:{
+        slidesPerView: 3,
+        spaceBetween: 20,
+      }
+    },
+  });
+
+  </script>
+ 
+</html>
