@@ -118,6 +118,31 @@ app.post("/login", (req,res) => {
     })
 })
 
+//seller route
+app.get("/seller", (req,res) => {
+    res.sendFile("seller.html", {root: "./"})
+})
+
+app.post("/seller", (req, res) => {
+    let { name, address, about, number, email} = req.body;
+
+    if (!name.length || !address.length || !about.length || number.length < 10 || !Number(number)) {
+         return res.json({"alert": "some information(s) is/are incorrect"})       
+    }else{
+        //update seller
+        const sellers = collection(db, "sellers");
+        setDoc(doc(sellers, email), req.body)
+        .then(data => {
+            const users = collection(db, "users")
+            updateDoc(doc(users, email), {
+                seller: true
+            }).then(data => {
+                res.json({"seller": true})
+            })
+        })
+    }
+})
+
 //404 error
 app.get("/404", (req, res) => {
     res.sendFile("404.html", {root: "./"})
