@@ -1,8 +1,13 @@
 import express from "express";
 import bcrypt from "bcrypt";
 
+
 //init server
 const app = express();
+
+ //middlewares
+ app.use(express.static("./"))
+ app.use(express.json())
 
 //routes
 //home
