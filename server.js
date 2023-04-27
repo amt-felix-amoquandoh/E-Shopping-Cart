@@ -143,6 +143,11 @@ app.post("/seller", (req, res) => {
     }
 })
 
+//dashboard route
+app.get("/dashboard", (req,res)=>{
+    res.sendFile("dashboard.html", {root: "./"})
+})
+
 //404 error
 app.get("/404", (req, res) => {
     res.sendFile("404.html", {root: "./"})

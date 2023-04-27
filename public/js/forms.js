@@ -11,36 +11,6 @@ window.onload = () => {
     }
 }
 
-const showFormError = (err) => {
-    let errorElement = document.querySelector(".error");
-    errorElement.innerHTML = err;
-    errorElement.classList.add("show")
-}
-
-const sendData = (path, data) => {
-    console.log(data);
-    fetch(path, {
-        method:"post",
-        headers: new Headers({"Content-Type": "application/json"}),
-        body: JSON.stringify(data)
-    }).then(res => res.json())
-    .then(data => processData(data))
-}
-
-const processData = (data) => {
-    loading.style.display = "none";
-    if (data.alert) {
-        showFormError(data.alert);            
-    } else if (data.name) {
-        sessionStorage.user = JSON.stringify(data);
-        location.replace("/../index.html");     
-    }else if (data.seller) {
-       let user = JSON.parse(sessionStorage.user);
-       user.seller = true;
-       sessionStorage.user = JSON.stringify(user);
-       location.replace("/../dashboard.html");
-    }
-}
 
 submitForm.addEventListener("click", () => {
     let fullName = document.querySelector("#name") || null;
@@ -85,3 +55,31 @@ submitForm.addEventListener("click", () => {
         }
     }
 })
+
+
+
+const showFormError = (err) => {
+    let errorElement = document.querySelector(".error");
+    errorElement.innerHTML = err;
+    errorElement.classList.add("show")
+}
+
+const sendData = (path, data) => {
+    console.log(data);
+    fetch(path, {
+        method:"post",
+        headers: new Headers({"Content-Type": "application/json"}),
+        body: JSON.stringify(data)
+    }).then(res => res.json())
+    .then(data => processData(data))
+}
+
+const processData = (data) => {
+    loading.style.display = "none";
+    if (data.alert) {
+        showFormError(data.alert);            
+    } else if (data.name) {
+        sessionStorage.user = JSON.stringify(data);
+        location.replace("/../index.html");     
+    }
+}

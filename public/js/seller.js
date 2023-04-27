@@ -1,3 +1,13 @@
+window.onload = () => {
+    let user = JSON.parse(sessionStorage.user || null);
+
+    if (user == null) {
+        location.replace("../../login.html")        
+    } else if(user.seller){
+        location.replace("../../dashboard.html")
+    }
+}
+
 let loading = document.querySelector(".loader");
 let applyBtn = document.querySelector(".submitButton")
 
