@@ -18,3 +18,12 @@ app.get("/", (req, res) => {
 app.listen(2023, () => {
     console.log("listening on port 2023");
 })
+
+//404 error
+app.get("/404", (req, res) => {
+    res.sendFile("404.html", {root: "./"})
+})
+
+app.use((req,res) => {
+    res.redirect("/404")
+})
