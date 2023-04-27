@@ -56,8 +56,13 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 150px;
+    width: 85px;
     display: none;
+}
+
+.logoContainer h3{
+    text-align: center;
+    color: var(--main-color);
 }
 
 .logo{
@@ -75,17 +80,17 @@ input[type="email"], textarea{
     padding: 20px;
     margin: 20px 0;
     border-radius: 5px;
-    background: var(--alternate1);
+    background: var(--secondary-color);
     border: none;
     outline: none;
     text-transform: capitalize;
-    color: #383838;
+    color: var(--main-color);
     font-size: 16px;
     box-shadow: 04px 10px rgba(0,0,0,0.04);
 }
 
 ::placeholder{
-    color: var(--main-color);
+    color: #383838;
 }
 
 .submitButton{
@@ -174,4 +179,16 @@ label a{
   text-align: center;
   line-height: 30px;
   font-weight: 500;
+}
+
+.error{
+    margin-top: -10px;
+    font-size: 0.8rem;
+    text-transform: capitalize;
+    user-select: none;
+    opacity: 0;
+}
+
+.error.show{
+    opacity: 1;
 }

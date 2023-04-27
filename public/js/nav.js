@@ -14,11 +14,12 @@ if (mobileMenu) {
    mobileMenu.addEventListener("click", () => {
        navMenuItems.classList.add("active");
        logo.classList.remove("hide")
+       navMenuClose.style.display = "flex";
        mobileMenu.style.display = "none";
        shopICon.style.display = "none";
        shopBagde.style.display = "none";
        secondNav.style.display = "none"
-       navMenuClose.style.display = "flex"; 
+        
    })    
 }
 
@@ -51,7 +52,7 @@ window.onload = () => {
     let user = JSON.parse(sessionStorage.user || null);
     if (user != null) {
         //already logged in 
-        popUpText.innerHTML = `User, <b>${user.name}</b>`;   
+        popUpText.innerHTML = `User, <b><i>${user.name}!</i></b>`;   
         loginActionBtn.innerHTML = "log out";
         loginActionBtn.addEventListener("click", () => {
             sessionStorage.clear();
