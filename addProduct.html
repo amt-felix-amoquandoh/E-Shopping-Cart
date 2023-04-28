@@ -20,14 +20,12 @@
   <body>
    <!--  -->
    <img src="./public/img/work-in-progress.gif" class="loader" alt="">
-   <div class="alertArea">
-    <img src="./public/img/warning.png" class="errorIcon" alt="">
-   <p class="errorText">Error message</p>
-   </div>
 
    <div class="logoContainer">
     <img src="./public/img/icons/brand.png" class="logo" alt="">
    </div>
+
+   <span style="color: red;" class="error">this is an error</span><br><br><br>
 
    <!--  -->
    <div class="itemForm">
@@ -41,7 +39,7 @@
    <div class="productInfo">
     <div class="productImage"><p class="productImgText">product image</p></div>
     <div class="uploadArea">
-        <p class="productImgText"><img src="" alt="camera image"></p>
+        <p class="productImgText"><img src="./public/img/dslr-camera.png" alt=""></p>
         <div class="uploadedImages">
             <input type="file" class="fileUpload" id="productImage1st">
             <label for="productImage1st" class="uploadedImage"></label>
@@ -68,19 +66,23 @@
    </div>
    <!--  -->
 
-   <!--  -->
-   <div class="productPrice">
-    <input type="number" name="" id="actualPrice" placeholder="actual price">
-    <input type="number" name="" id="discount" placeholder="discount percent">
-    <input type="number" name="" id="sellingPrice" placeholder="selling price">
+  
+   <input type="text" class="reviewHeadline" placeholder="product price in USD">
+   <div class="addReviewBox">
+    <h1 class="boxTitle">add a review</h1>
+    <input type="text" class="reviewHeadline" placeholder="review headline">
+    <textarea class="reviewField" placeholder="review" id="" cols="30" rows="10"></textarea>
+    <p class="ratingText">how much do you like this product?</p>
+    <div class="starContainer">
+        <img src="./public/img/star.png" class="starRating" alt="">
+        <img src="./public/img/star.png" class="starRating" alt="">
+        <img src="./public/img/star.png" class="starRating" alt="">
+        <img src="./public/img/star.png" class="starRating" alt="">
+        <img src="./public/img/star.png" class="starRating" alt="">
+        
+    </div>
+    <button class="addReviewBtn">add review</button>
    </div>
-   <!--  -->
-   <input type="number" name="" id="stock" min="20" placeholder="item in stocks(minimum 20)">
-
-   <textarea name="" id="tags" cols="30" rows="10" placeholder="Enter categories here, for example - Men, Kids, Kente, Double Breast, Jacket(add gender first)"></textarea>
-
-   <input type="checkbox" class="checkBox" id="tac" checked>
-   <label for="tac">clothing take 30% of your total sale</label>
 
    <div class="productButtons">
     <button class="btn" id="addButton">add product</button>
@@ -101,7 +103,7 @@
   ></script>
   
  
-  <script src="./public/js/forms.js"></script>
+  <!-- <script src="./public/js/forms.js"></script> -->
   <script src="./public/js/addProduct.js"></script>  
   </body>  
 </html>

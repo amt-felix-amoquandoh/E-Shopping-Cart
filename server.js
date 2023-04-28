@@ -148,6 +148,11 @@ app.get("/dashboard", (req,res)=>{
     res.sendFile("dashboard.html", {root: "./"})
 })
 
+//add product
+app.get("/addProduct", (req, res) =>{
+    res.sendFile("addProduct.html", {root: "public"});
+})
+
 //404 error
 app.get("/404", (req, res) => {
     res.sendFile("404.html", {root: "./"})

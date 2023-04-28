@@ -9,7 +9,7 @@
     width: 40%;
     height: 500px;
     position: relative;
-    background-image: url("../img/homeCart/image2.png");
+    background-image: url("../img/sportswear/sp5.png");
     background-size: cover;
     object-fit: cover;
 }
@@ -20,7 +20,7 @@
     left: 50%;
     transform: translate(-50%);
     width: 90%;
-    background: #fff;
+    background: var(--light-color);
     border-radius: 5px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -69,7 +69,7 @@
 .subHeading{
     font-size: 30px;
     text-transform: uppercase;
-    margin: 60px 0 10px ;
+    margin: 20px 0 10px ;
     font-weight: 300;
 }
 
@@ -78,7 +78,7 @@
     width: 80px;
     height: 80px;
     text-align: center;
-   border: 1px solid #383838;
+   border: 1px solid var(--main-color);
    border-radius: 50%;
    margin: 10px;
    margin-left: 0;
@@ -89,8 +89,8 @@
 }
 
 .sizeRadioBtn.check{
-    background: #383838;
-    color: #fff;
+    background: var(--main-color);
+    color: var(--secondary-color);
 }
 
 .btn{
@@ -98,8 +98,8 @@
     padding: 20px;
     border-radius: 5px;
     background: none;
-    border: 1px solid #383838;
-    color: #383838;
+    border: 1px solid var(--main-color);
+    color: var(--dark-color);
     font-size: 20px;
     cursor: pointer;
     margin: 20px 0;
@@ -108,6 +108,24 @@
 
 .cartButton{
     margin-right: 2%;
-    background: #383838;
-    color: #fff;
+    background: var(--main-color);
+    color: var(--secondary-color);
+}
+
+.rating{
+    display: flex;
+    margin: 1rem 0.1rem 0.2rem 0.1rem;
+}
+
+.rating img{
+    height: 30px;
+    width: 30px;
+    margin-left: 5px;
+}
+
+.ratingCount{
+    opacity: 0.4;
+    font-size: 14px;
+    line-height: 40px;
+    margin-left: 20px;
 }
