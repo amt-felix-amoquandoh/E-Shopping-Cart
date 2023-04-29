@@ -31,11 +31,19 @@
 
    <!--  -->
    <div class="itemForm">
-    <input type="text" id="productName" placeholder="product name">
-    <input type="text" id="brief" placeholder="product briefing">
-    <textarea name="" id="itemDescription" cols="30" rows="10" placeholder="detailed description"></textarea>
+    
+    <p class="productName" contenteditable="true" data-placeholder="product name" id="productName"></p>
+
+    <textarea class="productDesc" contenteditable="true" data-placeholder="product briefing" id="brief" cols="30" rows="10"></textarea>
    </div>
    <!--  -->
+
+   <div class="tagSection">
+    <h3>Categories</h3>
+    <p class="tagRules">enter some tags related to the product this will help searching the product. Seperate wtih commas</p>
+    <p class="categoryTags" contenteditable="true" data-placeholder="product tags" id="tags">3 tags at least</p>
+    
+   </div>
 
    <!--  -->
    <div class="productInfo">
@@ -70,15 +78,19 @@
     </div>
    </div>
    <!--  -->
-
   
-   <input type="text" class="reviewHeadline" placeholder="product price in USD">
+   <div style="margin-bottom: 15px;">
+    <p class="price" contenteditable="true" data-placeholder="product price in USD"></p>
+    <button class="btn disable" id="addButton">add to cart</button>
+    <button class="btn disable" id="addButton">buy now</button>
+   </div>
+
    <div class="addReviewBox">
-    <h1 class="boxTitle">add a review</h1>
+    <h3 class="boxTitle">Add a review</h3>
     <input type="text" class="reviewHeadline" placeholder="review headline">
     <textarea class="reviewField" placeholder="review" id="" cols="30" rows="10"></textarea>
     <p class="ratingText">how much do you like this product?</p>
-    <div class="starContainer">
+    <div class="starContainer disable">
         <img src="./public/img/star.png" class="starRating" alt="">
         <img src="./public/img/star.png" class="starRating" alt="">
         <img src="./public/img/star.png" class="starRating" alt="">

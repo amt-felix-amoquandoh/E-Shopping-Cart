@@ -241,5 +241,39 @@ input::-webkit-inner-spin-button{
   border: 1px solid #cacaca;
   }
 
+  .disable{
+    pointer-events: none;
+    filter: grayscale(1);
+  }
+
+  *[contenteditable="true"]{
+    outline: none;
+    border: 2px solid var(--secondary-color);
+  }
+
+  *[contenteditable="true"]:focus{
+    border-color: var(--main-color);
+  }
+
+  *[contenteditable="true"]::placeholder{
+    margin-top: -12px;
+  }
+
+  .tagSection{
+    padding: 30px 5vw;
+  }
+
+  .tagRules{
+    text-transform: capitalize;
+    font-size: 1.1rem;
+    line-height: 2rem;
+    opacity: 0.5;
+  }
+
+  .categoryTags{
+    height: 300px;
+    margin: 20px 0;
+    padding: 10px;
+  }
   
   
