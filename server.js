@@ -26,9 +26,9 @@ const app = express();
  app.use(express.json());
 
  //aws
- var AWS = require('aws-sdk');
- var uuid = require('uuid');
- import "dotnev/config";
+ import aws from "aws-sdk"
+ import 'dotenv/config';
+
  
 //aws setup
 const region = "us-east-1";
@@ -36,8 +36,35 @@ const bucketName = "kosafrique-bucket"
 const accessKeyId = process.env.AWS_ACCESS_KEY;
 const secretAccessKey = process.env.AWS_SECRET_KEY;
 
+aws.config.update({
+    region,
+    accessKeyId,
+    secretAccessKey
+})
 
+//init s3
+const s3 = new aws.S3()
 
+//generate image url
+async function generateURL(){
+    let date = new Date();
+
+    const imageName = `${date.getTime()}.png`;
+
+    const params = {
+        Bucket: bucketName,
+        Key: imageName,
+        Expires: 300,
+        ContentType: "image/png"
+    }
+
+    const uploadURL = await s3.getSignedUrlPromise("putObject", params);
+    return uploadURL;
+}
+
+app.get("/s3url", (req,res) => {
+    generateURL().then(url => res.json(url));
+})
 
 //routes
 //home
