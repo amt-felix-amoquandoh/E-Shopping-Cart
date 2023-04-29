@@ -24,7 +24,20 @@ const app = express();
  //middlewares
  app.use(express.static("./"))
  app.use(express.json());
-  
+
+ //aws
+ var AWS = require('aws-sdk');
+ var uuid = require('uuid');
+ import "dotnev/config";
+ 
+//aws setup
+const region = "us-east-1";
+const bucketName = "kosafrique-bucket"
+const accessKeyId = process.env.AWS_ACCESS_KEY;
+const secretAccessKey = process.env.AWS_SECRET_KEY;
+
+
+
 
 //routes
 //home
