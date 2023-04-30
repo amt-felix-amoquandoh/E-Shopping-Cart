@@ -31,15 +31,15 @@ const app = express();
 
  
 //aws setup
-const region = "us-east-1";
-const bucketName = "kosafrique-bucket"
-const accessKeyId = process.env.AWS_ACCESS_KEY;
-const secretAccessKey = process.env.AWS_SECRET_KEY;
+const region = process.env.AWS_DEFAULT_REGION;
+const bucketName = "kosafrique-main"
+const accessKeyId = process.env.AWS_ACCESS_KEY_ID;
+const secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
 
 aws.config.update({
     region,
     accessKeyId,
-    secretAccessKey
+    secretAccessKey,
 })
 
 //init s3
@@ -49,13 +49,13 @@ const s3 = new aws.S3()
 async function generateURL(){
     let date = new Date();
 
-    const imageName = `${date.getTime()}.png`;
+    const imageName = `${date.getTime()}.jpeg`;
 
     const params = {
         Bucket: bucketName,
         Key: imageName,
         Expires: 300,
-        ContentType: "image/png"
+        ContentType: "image/jpeg"
     }
 
     const uploadURL = await s3.getSignedUrlPromise("putObject", params);
@@ -65,6 +65,8 @@ async function generateURL(){
 app.get("/s3url", (req,res) => {
     generateURL().then(url => res.json(url));
 })
+
+
 
 //routes
 //home
