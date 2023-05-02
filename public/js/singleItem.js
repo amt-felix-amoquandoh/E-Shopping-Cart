@@ -25,7 +25,7 @@ sizeButtons.forEach((item, i) => {
     })
 })
 
-let ratingsInput = [...document.querySelectorAll(".starRating")];
+let ratingsInput = [...document.querySelectorAll(".star")];
 
 ratingsInput.map((star, index) => {
     star.addEventListener("click", () => {
@@ -38,3 +38,5 @@ ratingsInput.map((star, index) => {
         }
     })
 })
+
+

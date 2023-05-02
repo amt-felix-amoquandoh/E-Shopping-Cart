@@ -1,108 +1,106 @@
-let user = JSON.parse(sessionStorage.user || null);
+let url = "/mainProducts.json";
+let productsArea = document.getElementsByClassName("mainProArea")[0];
 
-window.onload = () => {
-    if(user == null){
-        location.replace("../../login.html")
-    }
-}
+fetch(url)
+  .then((response) => response.json())
+  .then((data) => {
+    data.forEach((item, index) => {
+      const { title, price, description, category, briefing } = item.fields;
+      const { id } = item.sys;
+      const image = item.fields.image.fields.file.url;
+      // const image1 = item.fields.image.fields.file1.url;
+      // const image2 = item.fields.image.fields.file2.url;
+      // const image3 = item.fields.image.fields.file3.url;
 
-let editables = [...document.querySelectorAll("*[contenteditable='true']")];
+      let card = document.createElement("a");
+      card.classList.add("itemCard");
+      card.innerHTML = `
+        <img src=${image} alt="">
+        <h5 class="cardTitle" title="African Print Dress">${title}</h5>
+        <p>${description}</p>
+        <div class="itemPrice">
+          <h5>$${price}</h5>
+        </div>
+        <div class="colorTag">
+          <div class="stars">
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+          </div>
+          <button class="proCart" data-id=${id}>Buy</button>
+        </div>
+      `;
+      productsArea.appendChild(card);
 
-editables.map((element) => {
-    let placeholder = element.getAttribute("data-placeholder");
-    element.innerHTML = placeholder;
-    element.addEventListener("focus", () => {
-        if(element.innerHTML === placeholder){
-            element.innerHTML = "";
-        }
-    })
-    element.addEventListener("focusout", () => {
-        if(!element.innerHTML.length){
-            element.innerHTML = placeholder
-        }
-    })
+      
+const modalContainer = document.getElementById("modal");
+const closeModalBtn = document.querySelector("#close-modal-btn");
+
+
+
+      card.addEventListener("click", () => {
+        modalContainer.classList.add('show-modal');
+
+closeModalBtn.addEventListener('click', ()=>{
+  modalContainer.classList.remove('show-modal');
+  itemPage.remove()
 })
+        // create a new page to display the product details
+        let itemPage = document.createElement("div");
+        itemPage.classList.add("productInfo");
+        
+        itemPage.innerHTML = `
+        
+          <div class="imageSlider">
+            <div class="productImages">
+                <img src=${image} alt="">
+                <img src=${image} alt="">
+                <img src=${image} alt="">
+                <img src=${image} alt="">
+            </div>
+        </div>
+        <div class="ItemDetails">
+            <h2 class="productBrand">${title}</h2>
+            <h4 class="itemDescription"><b>${description}</b></h4>
+            <p class="itemDescription">${briefing}</p>
+            <span class="itemPrice">$${price}</span>
+           
+            <span class="itemDiscount">( 50% Off )</span>
 
-let uploadInput = document.querySelector("#productImage1st");
-let imagePath = "/img/noImage.jpg";
+           
+              <div class="rating">
+                <img src="./public/img/star-filled.png" class="star" alt="">
+                <img src="./public/img/star-filled.png" class="star" alt="">
+                <img src="./public/img/star-filled.png" class="star" alt="">
+                <img src="./public/img/star-filled.png" class="star" alt="">
+                <img src="./public/img/star.png" class="star" alt="">
+             </div>
 
-
-uploadInput.addEventListener("change", () => {
-    const file = uploadInput.files[0];
-    let imageUrl;
-
-    if(file.type.includes("image")){
-        fetch("/s3url").then(res => res.json())
-        .then(url => {
-            fetch(url, {
-                method: "PUT",
-                headers: new Headers({"COntent-Type": "multipart/form-data"}),
-                body: file
-            }).then(res => {
-                imagePath = url.split("?")[0];
-
-                let productImage = document.querySelector(".productImage");
-                productImage.src = imagePath
-            })
-        })
-    }
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            <p class="subHeading">Select Size</p>
+            <input type="radio" name="size" value="xs" checked hidden id="sSize">
+            <label for="sSize" class="sizeRadioBtn check">xs</label>
+            <input type="radio" name="size" value="s" checked hidden id="sSize">
+            <label for="sSize" class="sizeRadioBtn check">s</label>
+            <input type="radio" name="size" value="m" hidden id="mSize">
+            <label for="mSize" class="sizeRadioBtn">m</label>
+            <input type="radio" name="size" value="l" hidden id="lSize">
+            <label for="lSize" class="sizeRadioBtn">l</label>
+            <input type="radio" name="size" value="xl" hidden id="xlSize">
+            <label for="xlSize" class="sizeRadioBtn">xl</label>
+            <input type="radio" name="size" value="xxl" hidden id="xxlSize">
+            <label for="xxlSize" class="sizeRadioBtn">xxl</label>
+            <button class="btn cartButton proCart" data-id=${id}>Add to Cart</button>
+        </div>
+    
+        `;
 
 
+// Append the itemPage element to the container element
+            modalContainer.appendChild(itemPage);
 
-
-
-
-
-// let uploadImages = [...document.querySelectorAll(".fileUpload")];
-// let imagePaths = [];
-
-// uploadImages.forEach((fileupload, index) => {
-//     fileupload.addEventListener("change", () => {
-//         const file = fileupload.files[0];
-//         let imageUrl;
-
-//         if(file.type.includes("image")){
-//             fetch("/s3url").then(res => res.json())
-//             .then(url => {
-//                 fetch(url, {
-//                     method: "PUT",
-//                     headers: new Headers({"Content-Type": "multipart/form-data"}),
-//                     body: file
-//                 }).then(res => {
-//                     imageUrl = url.split("?")[0];
-//                     imagePaths[index] = imageUrl;
-//                     let label = document.querySelector(`label[for=${fileupload.id}]`);
-//                     label.style.backroundImage = `url(${imageUrl})`;
-//                     let productImage = document.querySelector(".productImage");
-//                     productImage.style.backroundImage = `url(${imageUrl})`
-//                 })
-//             })
-//         }
-//     })
-// })
+           // Append the product page to the new window
+      });
+    });
+  });

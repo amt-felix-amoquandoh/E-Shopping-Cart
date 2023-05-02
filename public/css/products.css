@@ -141,9 +141,14 @@ section .productsBox .mainProArea .itemCard:hover{
 }
 
 section .productsBox .mainProArea .itemCard img{
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  transition: all 1s;
+}
+
+section .productsBox .mainProArea .itemCard img:hover{
+transform: scale(1.2);
 }
 
 section .productsBox .mainProArea .itemCard .cardTitle{
@@ -175,6 +180,205 @@ section .productsBox .mainProArea .itemCard .itemPrice h5{
     color: #000;
     font-size: 14px;
 }
+
+/* modal */
+
+
+#show-modal-btn {
+  font-size: 30px;
+  padding:10px;
+}
+
+.modal-container {
+  background-image: linear-gradient(rgba(0,0,0,07),rgba(151, 150, 150, 0.8));
+  position:fixed;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
+
+.show-modal {
+  visibility: visible;
+  z-index: 101;
+}
+
+.modal {
+  background-color: #fff;
+  width: auto;
+  height: auto;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+#modal .productInfo{
+  background: #fff;
+  width: 50vw;
+}
+
+.modal-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: teal;
+  color: white;
+  padding:10px 10px;
+}
+
+#close-modal-btn {
+  padding:5px;
+  background-color: transparent;
+  font-size: 20px;
+  border: none;
+}
+
+.modal-description {
+  padding:25px 10px;
+  height: auto;
+}
+
+.productInfo{
+  width: 100%;
+  padding: 60px 4vw;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.imageSlider{
+  width: 65%;
+  height: 500px;
+  position: relative;
+  background-size: cover;
+  object-fit: cover;
+}
+
+.productImages{
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 95%;
+  background: var(--light-color);
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 120px;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.productImages img{
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.productImages img.active{
+  opacity: 0.5;
+}
+
+.itemDetails{
+  width: 45%;
+  padding: 20px;
+}
+
+.itemDetails .productBrand{
+  text-transform: capitalize;
+  font-size: 30px;
+}
+
+.itemDetails .itemDescription{
+
+  overflow-x: hidden;
+  font-size: 22px;
+  line-height: 30px;
+  height: auto;
+  margin: 15px 0 30px ;
+  white-space: wrap;
+  text-overflow: ellipsis;
+}
+
+.itemPrice{
+  font-weight: 700;
+  font-size: 30px;
+  color: teal;
+}
+
+.itemDiscount{
+  color: #ff7d7d;
+  font-size: 20px;
+}
+
+.subHeading{
+  font-size: 30px;
+  text-transform: uppercase;
+  margin: 20px 0 10px ;
+  font-weight: 300;
+}
+
+.sizeRadioBtn{
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+ border: 1px solid var(--main-color);
+ border-radius: 50%;
+ margin: 10px;
+ margin-left: 0;
+ line-height: 50px;
+ text-transform: uppercase; 
+ font-size: 20px;
+ cursor: pointer;
+}
+
+.sizeRadioBtn.check{
+  background: var(--main-color);
+  color: var(--secondary-color);
+}
+
+.btn{
+  width: 35%;
+  padding: 20px;
+  border-radius: 5px;
+  background: none;
+  border: 1px solid var(--main-color);
+  color: var(--dark-color);
+  font-size: 20px;
+  cursor: pointer;
+  margin: 20px 0;
+  text-transform: capitalize;
+}
+
+.cartButton{
+  margin-right: 2%;
+  background: var(--main-color);
+  color: var(--secondary-color);
+}
+
+.rating{
+  display: flex;
+  margin: 1rem 0.1rem 0.2rem 0.1rem;
+}
+
+.rating img{
+  height: 30px;
+  width: 30px;
+  margin-left: 5px;
+}
+
+.ratingCount{
+  opacity: 0.4;
+  font-size: 14px;
+  line-height: 40px;
+  margin-left: 20px;
+}
+
+
 
 section .productsBox .mainProArea .itemCard .itemPrice h5:nth-child(2){
     color: gray;

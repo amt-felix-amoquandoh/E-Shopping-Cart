@@ -71,15 +71,20 @@ const sendData = (path, data) => {
         headers: new Headers({"Content-Type": "application/json"}),
         body: JSON.stringify(data)
     }).then(res => res.json())
-    .then(data => processData(data))
+    .then(data => processData(data)) 
 }
 
 const processData = (data) => {
     loading.style.display = "none";
     if (data.alert) {
         showFormError(data.alert);            
-    } else if (data.name) {
+    } else if (data.email) {
         sessionStorage.user = JSON.stringify(data);
-        location.replace("/../index.html");     
+        if(location.search.includes("after")){
+            let pageId = location.search.split("=")[1];
+            location.replace(`./products/${pageId}`)
+        }   else{
+            location.replace("/")
+        }
     }
 }

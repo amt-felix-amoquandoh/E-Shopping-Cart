@@ -5,7 +5,7 @@
 @import "./footer.css";
 @import "./products.css";
 @import "./singleItem.css";
-/* @import "./slider.css"; */
+@import "./modal.css";
 
 
 *{
@@ -328,6 +328,7 @@ button.white{
     
  }
 
+ 
 
 
 
@@ -364,6 +365,44 @@ button.white{
       height: 100px;
       width: auto;
     }
+
+    .productInfo{
+      width: 100%;
+      justify-content: space-between;
+      margin: 0;
+      padding: 0;
+  }
+
+  .sizeRadioBtn{
+    
+    width: 60px;
+    height: 60px;
+ 
+   line-height: 60px;
+
+   font-size: 15px;
+}
+
+.btn{
+  width: 35%;
+  
+}
+
+.headingOther{
+  font-size: 2.4rem;
+}
+
+  .imageSlider{
+    width: 50%;
+    height: 360px;
+    background-position: center;
+    margin: 1rem;
+}
+
+.itemDetails{
+  width: 50%;
+  margin: 1rem;
+}
 
     .mobileMenu{
       margin-left: 14px;
@@ -544,6 +583,7 @@ section .productsBox .mainProArea .itemCard{
 
 
 @media (max-device-width: 480px){
+  
    .header{
     padding-top: 10px;
     padding-bottom: 10px;
@@ -751,6 +791,46 @@ section aside .filterArea .clothesChecked h6{
   align-items: center;
   position: relative;
  }
+
+
+ .productInfo{
+  width: 100%;
+  flex-wrap: wrap;
+  margin: 2rem 3px 1px 1px;
+  padding: 10px;
+}
+
+.sizeRadioBtn{
+
+width: 50px;
+height: 50px;
+
+line-height: 50px;
+
+font-size: 12px;
+}
+
+.btn{
+width: 40%;
+
+}
+
+.headingOther{
+font-size: 1.8rem;
+}
+
+.imageSlider{
+width: 100%;
+height: 280px;
+background-position: center;
+margin: 0;
+}
+
+.itemDetails{
+width: 100%;
+margin: 0;
+}
+
 
   /*  */
   .shopCover h2,

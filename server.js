@@ -25,50 +25,7 @@ const app = express();
  app.use(express.static("./"))
  app.use(express.json());
 
- //aws
- import aws from "aws-sdk"
- import 'dotenv/config';
-
- 
-//aws setup
-const region = process.env.AWS_DEFAULT_REGION;
-const bucketName = "kosafrique-main"
-const accessKeyId = process.env.AWS_ACCESS_KEY_ID;
-const secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
-
-aws.config.update({
-    region,
-    accessKeyId,
-    secretAccessKey,
-})
-
-//init s3
-const s3 = new aws.S3()
-
-//generate image url
-async function generateURL(){
-    let date = new Date();
-
-    const imageName = `${date.getTime()}.jpeg`;
-
-    const params = {
-        Bucket: bucketName,
-        Key: imageName,
-        Expires: 300,
-        ContentType: "image/jpeg"
-    }
-
-    const uploadURL = await s3.getSignedUrlPromise("putObject", params);
-    return uploadURL;
-}
-
-app.get("/s3url", (req,res) => {
-    generateURL().then(url => res.json(url));
-})
-
-
-
-//routes
+ //routes
 //home
 app.get("/", (req, res) => {
     res.sendFile("index.html", { root: "./"})
@@ -161,29 +118,10 @@ app.post("/login", (req,res) => {
 })
 
 //seller route
-app.get("/seller", (req,res) => {
-    res.sendFile("seller.html", {root: "./"})
+app.get("/search/:key", (req,res) => {
+    res.sendFile("search.html", {root: "./"})
 })
 
-app.post("/seller", (req, res) => {
-    let { name, address, about, number, email} = req.body;
-
-    if (!name.length || !address.length || !about.length || number.length < 10 || !Number(number)) {
-         return res.json({"alert": "some information(s) is/are incorrect"})       
-    }else{
-        //update seller
-        const sellers = collection(db, "sellers");
-        setDoc(doc(sellers, email), req.body)
-        .then(data => {
-            const users = collection(db, "users")
-            updateDoc(doc(users, email), {
-                seller: true
-            }).then(data => {
-                res.json({"seller": true})
-            })
-        })
-    }
-})
 
 //dashboard route
 app.get("/dashboard", (req,res)=>{

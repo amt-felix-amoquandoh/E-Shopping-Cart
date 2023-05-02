@@ -68,3 +68,14 @@ window.onload = () => {
         
     }
 }
+
+
+//search box
+// let searchButton = document.querySelector(".searchBtn");
+// let searchBox = document.querySelector(".searchInput");
+
+// searchButton.addEventListener("click", () =>{
+//     if(searchBox.ariaValueMax.length){
+//         location.href = `../../search/${searchBox.value}`;
+//     }
+// })
