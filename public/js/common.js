@@ -85,7 +85,7 @@ class UI {
     const modalContainer = document.querySelector(".modal-container");
     const closeModalBtn = document.querySelector("#close-modal-btn");
 
-    // modalContainer.classList.add("show-modal");
+    modalContainer.classList.add("show-modal");
 
     closeModalBtn.addEventListener("click", () => {
       modalContainer.classList.remove("show-modal");
