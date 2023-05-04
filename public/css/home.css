@@ -516,6 +516,9 @@ button.white {
 
 /* Media queries for standar devices */
 /* Tablet view */
+@media (max-width: 1110px) {
+}
+
 @media (max-width: 830px) {
   body {
     min-width: 100vw;

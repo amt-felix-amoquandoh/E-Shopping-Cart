@@ -25,7 +25,7 @@ function displayCartOverlay() {
 class Products {
   async getProducts() {
     try {
-      let result = await fetch("mainProducts.json");
+      let result = await fetch("products.json");
       let data = await result.json();
       let products = data.items;
       products = products.map((item) => {
@@ -70,7 +70,6 @@ class UI {
         `;
     });
     productArea.innerHTML = itemResult;
-
     // add event listener to each product item
     const productCards = document.querySelectorAll(".itemCard");
     productCards.forEach((card) => {
@@ -82,17 +81,18 @@ class UI {
   }
 
   displayProductDetails(product) {
-    const modalContainer = document.getElementById("modal");
+    console.log(`Product ${product} details displayed`);
+    const modalContainer = document.querySelector(".modal-container");
     const closeModalBtn = document.querySelector("#close-modal-btn");
 
-    modalContainer.classList.add("show-modal");
+    // modalContainer.classList.add("show-modal");
 
     closeModalBtn.addEventListener("click", () => {
       modalContainer.classList.remove("show-modal");
-      modalContainer.removeChild(itemPage);
+      modalContainer.remove(itemPage);
     });
 
-    const { id, title, description, price, image } = product;
+    const { id, title, description, price, image, brief } = product;
 
     let itemPage = document.createElement("div");
     itemPage.classList.add("productInfo");
@@ -101,7 +101,7 @@ class UI {
       <div class="imageSlider">
         <h4 class="selectImage">Select image file below to view</h4>
         <div class="productImages">
-          <img src=${image} alt="">
+          <img src=${product.image} alt="">
           <img src=${image} alt="">
           <img src=${image} alt="">
           <img src=${image} alt="">
@@ -110,7 +110,7 @@ class UI {
       <div class="ItemDetails">
         <h2 class="productBrand">${title}</h2>
         <h4 class="itemDescription"><b>${description}</b></h4>
-        <p class="itemDescription">${briefing}</p>
+        <p class="itemDescription">${brief}</p>
         <span class="itemPrice">$${price}</span>
         <span class="itemDiscount">(50% Off)</span>
         <div class="rating">
@@ -282,7 +282,7 @@ class UI {
     this.setCartItemValues(cartBasket);
     Storage.saveCart(cartBasket);
     let button = this.getOneButton(id);
-    button.disabled = false;
+    // button.disabled = false;
     button.innerHTML = `Buy`;
   }
   getOneButton(id) {
