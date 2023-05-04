@@ -34,26 +34,24 @@ fetch(url)
       `;
       productsArea.appendChild(card);
 
-      
-const modalContainer = document.getElementById("modal");
-const closeModalBtn = document.querySelector("#close-modal-btn");
-
-
+      const modalContainer = document.getElementById("modal");
+      const closeModalBtn = document.querySelector("#close-modal-btn");
 
       card.addEventListener("click", () => {
-        modalContainer.classList.add('show-modal');
+        modalContainer.classList.add("show-modal");
 
-closeModalBtn.addEventListener('click', ()=>{
-  modalContainer.classList.remove('show-modal');
-  itemPage.remove()
-})
+        closeModalBtn.addEventListener("click", () => {
+          modalContainer.classList.remove("show-modal");
+          itemPage.remove();
+        });
         // create a new page to display the product details
         let itemPage = document.createElement("div");
         itemPage.classList.add("productInfo");
-        
+
         itemPage.innerHTML = `
         
           <div class="imageSlider">
+          <h4 class="selectImage">Select image file below to view</h4>
             <div class="productImages">
                 <img src=${image} alt="">
                 <img src=${image} alt="">
@@ -96,11 +94,50 @@ closeModalBtn.addEventListener('click', ()=>{
     
         `;
 
+        // Append the itemPage element to the container element
+        modalContainer.appendChild(itemPage);
 
-// Append the itemPage element to the container element
-            modalContainer.appendChild(itemPage);
+        // Append the product page to the new window
+        const imagesOfItems = document.querySelectorAll(".productImages img");
+        const itemsSlider = document.querySelector(".imageSlider");
 
-           // Append the product page to the new window
+        let activeSliderImage = 0;
+
+        imagesOfItems.forEach((item, i) => {
+          item.addEventListener("click", () => {
+            imagesOfItems[activeSliderImage].classList.remove("active");
+            item.classList.add("active");
+            itemsSlider.style.backgroundImage = `url("${item.src}")`;
+            activeSliderImage = i;
+          });
+        });
+
+        // Selecting sizes
+
+        const sizeButtons = document.querySelectorAll(".sizeRadioBtn");
+        let checkedButton = 0;
+
+        sizeButtons.forEach((item, i) => {
+          item.addEventListener("click", () => {
+            sizeButtons[checkedButton].classList.remove("check");
+            item.classList.add("check");
+            checkedButton = i;
+          });
+        });
+
+        let ratingsInput = [...document.querySelectorAll(".star")];
+
+        ratingsInput.map((star, index) => {
+          star.addEventListener("click", () => {
+            for (let i = 0; i < 5; i++) {
+              if (i <= index) {
+                ratingsInput[i].src = `/public/img/star-filled.png`;
+              } else {
+                ratingsInput[i].src = `/public/img/star.png`;
+              }
+            }
+          });
+        });
       });
     });
   });

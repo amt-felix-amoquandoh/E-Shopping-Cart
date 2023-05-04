@@ -1,178 +1,171 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700;800&display=swap');
-
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'League Spartan', sans-serif;
-}
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700;800&display=swap");
 
 /* Custom properties */
 :root {
-    --dark-color: black;
-    --darkGrey: #383838;
-    --light-color: #fff;
-    --main-color: rgb(0,78,141);
-    --secondary-color: rgb(252,196,55);
-    --alternate: rgb(223,192,163);
-    --alternate1: rgb(100,186,236);
-    --primary-background-color: rgb(2,42,102);
-    --secondary-background-color: rgb(28,28,28);
-    --transparent-light-color: rgba(255, 255, 255, 0.05);
-    --transparent-dark-color: rgba(0, 0, 0, 0.75);
-    --gradient-color: linear-gradient(
-      115deg,
-      #4fcf70,
-      #fad648,
-      #a767e5,
-      #12bcfe,
-      #44ce7b
-    );
-    --font-family: "Poppins", sans-serif;
-    --font-size-xsm: 1.2rem;
-    --font-size-sm: 1.6rem;
-    --font-size-md: 2.4rem;
-    --font-size-lg: 3rem;
-    --font-size-xl: 4rem;
-    --gap: 2rem;
-    --margin-sm: 2rem;
-    --margin-md: 3rem;
-    --item-min-height-sm: 20rem;
-    --item-min-height-md: 30rem;
-  }
-
-body{
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--alternate);
+  --dark-color: black;
+  --darkGrey: #383838;
+  --light-color: #fff;
+  --main-color: rgb(0, 78, 141);
+  --secondary-color: rgb(252, 196, 55);
+  --alternate: rgb(223, 192, 163);
+  --alternate1: rgb(100, 186, 236);
+  --primary-background-color: rgb(2, 42, 102);
+  --secondary-background-color: rgb(28, 28, 28);
+  --transparent-light-color: rgba(255, 255, 255, 0.05);
+  --transparent-dark-color: rgba(0, 0, 0, 0.75);
+  --gradient-color: linear-gradient(
+    115deg,
+    #4fcf70,
+    #fad648,
+    #a767e5,
+    #12bcfe,
+    #44ce7b
+  );
+  --font-family: "Poppins", sans-serif;
+  --font-size-xsm: 1.2rem;
+  --font-size-sm: 1.6rem;
+  --font-size-md: 2.4rem;
+  --font-size-lg: 3rem;
+  --font-size-xl: 4rem;
+  --gap: 2rem;
+  --margin-sm: 2rem;
+  --margin-md: 3rem;
+  --item-min-height-sm: 20rem;
+  --item-min-height-md: 30rem;
 }
 
-.loader{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 85px;
-    display: none;
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--alternate);
 }
 
-.logoContainer h3{
-    text-align: center;
-    color: var(--main-color);
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85px;
+  display: none;
 }
 
-.logo{
-    height: 200px;
-    display: block;
-    margin: 0 auto 50px;
+.logoContainer h3 {
+  text-align: center;
+  color: var(--main-color);
+}
+
+.logo {
+  height: 200px;
+  display: block;
+  margin: 0 auto 50px;
 }
 
 input[type="text"],
 input[type="password"],
-input[type="email"], textarea, .price, .productName{
-    display: block;
-    width: 300px;
-    height: 40px;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 5px;
-    background: var(--secondary-color);
-    border: none;
-    outline: none;
-    text-transform: capitalize;
-    color: var(--main-color);
-    font-size: 16px;
-    box-shadow: 04px 10px rgba(0,0,0,0.04);
+input[type="email"],
+textarea,
+.price,
+.productName {
+  display: block;
+  width: 300px;
+  height: 40px;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 5px;
+  background: var(--secondary-color);
+  border: none;
+  outline: none;
+  text-transform: capitalize;
+  color: var(--main-color);
+  font-size: 16px;
+  box-shadow: 04px 10px rgba(0, 0, 0, 0.04);
 }
 
-::placeholder{
-    color: #383838;
+::placeholder {
+  color: #383838;
 }
 
-.submitButton{
-    width: 300px;
-    height: 40px;
-    text-align: center;
-    line-height: 40px;
-    background: var(--main-color);
-    color: var(--secondary-color);
-    border-radius: 2px;
-    text-transform: capitalize;
-    border: none;
-    cursor: pointer;
-    display: block;
-    margin: 30px 0;
-    font-size: larger;
+.submitButton {
+  width: 300px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background: var(--main-color);
+  color: var(--secondary-color);
+  border-radius: 2px;
+  text-transform: capitalize;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin: 30px 0;
+  font-size: larger;
 }
 
-.checkBox{
-   
-    position: relative;
-    width: 15px;
-    height: 15px;
-    border-radius: 2px;
-    background: var(--secondary-color);
-    border: 1px solid var(--main-color);
-    cursor: pointer;
+.checkBox {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  border-radius: 2px;
+  background: var(--secondary-color);
+  border: 1px solid var(--main-color);
+  cursor: pointer;
 }
 
-.checkBox:checked{
-    background: var(--secondary-color);
+.checkBox:checked {
+  background: var(--secondary-color);
 }
 
-
-label{
-    text-transform: capitalize;
-    display: inline-block;
-    margin-bottom: 10px;
-    font-size: 14px;
-    color: var(--main-color);
+label {
+  text-transform: capitalize;
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: var(--main-color);
 }
 
-label a{
-    color: #383838;
+label a {
+  color: #383838;
 }
 
-.loginLink{
+.loginLink {
   color: var(--main-color);
   text-transform: capitalize;
   text-align: center;
   display: block;
 }
 
-.alertArea{
-    width: 300px;
-    min-height: 150px;
-    background: var(--alternate1);
-    border-radius: 10px;
-    box-shadow: 0 5px 100px rgba(0,0,0,0.04);
-    position: absolute;
-    top: 52%;
-    left: 50%;
-    opacity: 0;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    transition: 1s;
+.alertArea {
+  width: 300px;
+  min-height: 150px;
+  background: var(--alternate1);
+  border-radius: 10px;
+  box-shadow: 0 5px 100px rgba(0, 0, 0, 0.04);
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  transition: 1s;
 }
 
-.show{
-    opacity: 1;
-    pointer-events: all;
-    top: 52%;
+.show {
+  opacity: 1;
+  pointer-events: all;
+  top: 52%;
 }
 
-.errorIcon{
-    display: block;
-    margin: 10px auto 20px;
-    height: 60px;
+.errorIcon {
+  display: block;
+  margin: 10px auto 20px;
+  height: 60px;
 }
 
-.errorText{
+.errorText {
   color: #e24c4b;
   font-size: 20px;
   text-transform: capitalize;
@@ -181,14 +174,14 @@ label a{
   font-weight: 500;
 }
 
-.error{
-    margin-top: -10px;
-    font-size: 1.2rem;
-    text-transform: capitalize;
-    user-select: none;
-    opacity: 0;
+.error {
+  margin-top: -10px;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  user-select: none;
+  opacity: 0;
 }
 
-.error.show{
-    opacity: 1;
+.error.show {
+  opacity: 1;
 }

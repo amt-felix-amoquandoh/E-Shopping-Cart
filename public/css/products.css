@@ -1,66 +1,66 @@
 /*  */
-.sectionOfProducts{
-    width: 100%;
-    height: auto;
-    display: flex;
-    margin: 36px auto 0px auto;
-    background: #fff;
+.sectionOfProducts {
+  width: 100%;
+  height: auto;
+  display: flex;
+  margin: 36px auto 0px auto;
+  background: #fff;
 }
 
-section aside .productsBox{
-    width: 78%;
-    height: auto;
+section aside .productsBox {
+  width: 78%;
+  height: auto;
 }
 
-section aside{
-    width: 18%;
+section aside {
+  width: 18%;
 }
 
-section .productsBox{
-    padding: 0px 30px;
+section .productsBox {
+  padding: 0px 30px;
 }
 
-section .productsBox nav{
-    width: 100%;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+section .productsBox nav {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgb(0, 0, 0, 0.1);
 }
 
-section .productsBox nav h5 ion-icon{
-    margin:  0 3px -3px 3px;
+section .productsBox nav h5 ion-icon {
+  margin: 0 3px -3px 3px;
 }
 
-section .productsBox nav h5 span{
-    color: grey;
+section .productsBox nav h5 span {
+  color: grey;
 }
 
-section .productsBox section{
-    width: 100%;
-    height: 40px;
-    margin: 0;
-    margin-top: 15px;
+section .productsBox section {
+  width: 100%;
+  height: 40px;
+  margin: 0;
+  margin-top: 15px;
 }
 
-section .productsBox section .sortTitle{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+section .productsBox section .sortTitle {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-section .productsBox section .sortTitle h4{
-    font-weight: 600;
-    color: var(--secondary-color);
+section .productsBox section .sortTitle h4 {
+  font-weight: 600;
+  color: var(--secondary-color);
 }
 
-section .productsBox section .sortTitle .sortSelect{
-   position: relative;
+section .productsBox section .sortTitle .sortSelect {
+  position: relative;
 }
 
-section .productsBox section .sortTitle button{
+section .productsBox section .sortTitle button {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -74,128 +74,130 @@ section .productsBox section .sortTitle button{
   font-weight: 600;
 }
 
-section .productsBox section .sortTitle .sortSelect button ion-icon{
-   font-size: 18px;
-   color: grey;
+section .productsBox section .sortTitle .sortSelect button ion-icon {
+  font-size: 18px;
+  color: grey;
 }
 
-section .productsBox section .sortTitle .sortSelect .sortOptions{
-    position: absolute;
-    width: 150px;
-    height: 0px;
-    opacity: 0;
-    padding: 5px 10px 10px 10px;
-    background: #fff;
-    border-radius: 5px;
-    text-align: center;
-    overflow: hidden;
-    transition: 0.3s linear;
+section .productsBox section .sortTitle .sortSelect .sortOptions {
+  position: absolute;
+  width: 150px;
+  height: 0px;
+  opacity: 0;
+  padding: 5px 10px 10px 10px;
+  background: #fff;
+  border-radius: 5px;
+  text-align: center;
+  overflow: hidden;
+  transition: 0.3s linear;
 }
 
-section .productsBox section .sortTitle .sortSelect .sortOptions li{
-    list-style: none;
-    padding: 5px 0px;
-    background: rgb(0, 0, 0, 0.1);
-    margin-top: 5px;
-    border-radius: 3px;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s linear;
+section .productsBox section .sortTitle .sortSelect .sortOptions li {
+  list-style: none;
+  padding: 5px 0px;
+  background: rgb(0, 0, 0, 0.1);
+  margin-top: 5px;
+  border-radius: 3px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s linear;
 }
 
-section .productsBox section .sortTitle .sortSelect .sortOptions li:hover{
-    background: #000;
-    color: #fff;
+section .productsBox section .sortTitle .sortSelect .sortOptions li:hover {
+  background: #000;
+  color: #fff;
 }
 
-section .productsBox section .sortTitle .sortSelect .sortOptions_active{
-    height: 150px;
-    opacity: 1;
-    z-index: 99999999999999;
+section .productsBox section .sortTitle .sortSelect .sortOptions_active {
+  height: 150px;
+  opacity: 1;
+  z-index: 99999999999999;
 }
 
-section .productsBox .mainProArea{
-   width: 100%;
-   height: auto;
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-   flex-wrap: wrap;
+section .productsBox .mainProArea {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-section .productsBox .mainProArea .itemCard{
-    position: relative;
-    width: 250px;
-    height: 270px;
-    border: 1px solid rgba(78, 78, 78, 0.158);
-    margin: 5px 10px 25px 2px;
-    text-decoration: none;
-    transition: 0.3s linear;
-    padding: 5px 10px;
+section .productsBox .mainProArea .itemCard {
+  position: relative;
+  width: 250px;
+  height: 270px;
+  border: 1px solid rgba(78, 78, 78, 0.158);
+  margin: 5px 10px 25px 2px;
+  text-decoration: none;
+  transition: 0.3s linear;
+  padding: 5px 10px;
 }
 
-section .productsBox .mainProArea .itemCard:hover{
-    box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.3);
-    border-radius: 5px;
+section .productsBox .mainProArea .itemCard:hover {
+  box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.3);
+  border-radius: 5px;
 }
 
-section .productsBox .mainProArea .itemCard img{
+section .productsBox .mainProArea .itemCard img {
   width: 100%;
   height: 150px;
   object-fit: cover;
   transition: all 1s;
 }
 
-section .productsBox .mainProArea .itemCard img:hover{
-transform: scale(1.2);
+section .productsBox .mainProArea .itemCard img:hover {
+  transform: scale(1.2);
 }
 
-section .productsBox .mainProArea .itemCard .cardTitle{
-    font-size: 13px;
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    color: #000;
+section .productsBox .mainProArea .itemCard .cardTitle {
+  font-size: 13px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #000;
 }
 
-section .productsBox .mainProArea .itemCard p{
-    font-size: 14px;
-    font-weight: 500;
-    color: gray;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+section .productsBox .mainProArea .itemCard p {
+  font-size: 14px;
+  font-weight: 500;
+  color: gray;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
-section .productsBox .mainProArea .itemCard .itemPrice{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-weight: 500;
+section .productsBox .mainProArea .itemCard .itemPrice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
 }
 
-section .productsBox .mainProArea .itemCard .itemPrice h5{
-    color: #000;
-    font-size: 14px;
+section .productsBox .mainProArea .itemCard .itemPrice h5 {
+  color: #000;
+  font-size: 14px;
 }
 
 /* modal */
 
-
 #show-modal-btn {
   font-size: 30px;
-  padding:10px;
+  padding: 10px;
 }
 
 .modal-container {
-  background-image: linear-gradient(rgba(0,0,0,07),rgba(151, 150, 150, 0.8));
-  position:fixed;
-  top:0;
-  left:0;
-  width:100vw;
-  height:100vh;
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 07),
+    rgba(151, 150, 150, 0.8)
+  );
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -215,7 +217,7 @@ section .productsBox .mainProArea .itemCard .itemPrice h5{
   overflow: hidden;
 }
 
-#modal .productInfo{
+#modal .productInfo {
   background: #fff;
   width: 50vw;
 }
@@ -226,37 +228,39 @@ section .productsBox .mainProArea .itemCard .itemPrice h5{
   justify-content: space-between;
   background-color: teal;
   color: white;
-  padding:10px 10px;
+  padding: 10px 10px;
 }
 
 #close-modal-btn {
-  padding:5px;
+  padding: 5px;
   background-color: transparent;
   font-size: 20px;
   border: none;
 }
 
 .modal-description {
-  padding:25px 10px;
+  padding: 25px 10px;
   height: auto;
 }
 
-.productInfo{
+.productInfo {
   width: 100%;
   padding: 60px 4vw;
   display: flex;
   justify-content: space-evenly;
+  gap: 40px;
 }
 
-.imageSlider{
+.imageSlider {
   width: 65%;
   height: 500px;
   position: relative;
   background-size: cover;
   object-fit: cover;
+  background-position: center;
 }
 
-.productImages{
+.productImages {
   position: absolute;
   bottom: 20px;
   left: 50%;
@@ -271,77 +275,82 @@ section .productsBox .mainProArea .itemCard .itemPrice h5{
   padding: 10px;
 }
 
-.productImages img{
+.selectImage {
+  font-weight: lighter;
+  text-align: center;
+  align-self: center;
+}
+
+.productImages img {
   width: 100%;
   height: 80px;
   object-fit: cover;
   cursor: pointer;
 }
 
-.productImages img.active{
+.productImages img.active {
   opacity: 0.5;
 }
 
-.itemDetails{
+.itemDetails {
   width: 45%;
   padding: 20px;
 }
 
-.itemDetails .productBrand{
+.itemDetails .productBrand {
   text-transform: capitalize;
-  font-size: 30px;
+  font-size: 20px;
 }
 
-.itemDetails .itemDescription{
-
+.itemDetails .itemDescription {
   overflow-x: hidden;
   font-size: 22px;
   line-height: 30px;
   height: auto;
-  margin: 15px 0 30px ;
+  margin: 15px 0 30px;
   white-space: wrap;
   text-overflow: ellipsis;
 }
 
-.itemPrice{
+.itemPrice {
   font-weight: 700;
   font-size: 30px;
   color: teal;
 }
 
-.itemDiscount{
+.itemDiscount {
   color: #ff7d7d;
   font-size: 20px;
 }
 
-.subHeading{
+.subHeading {
   font-size: 30px;
   text-transform: uppercase;
-  margin: 20px 0 10px ;
+  margin: 20px 0 10px;
   font-weight: 300;
 }
 
-.sizeRadioBtn{
+.sizeRadioBtn {
   display: inline-block;
   width: 50px;
   height: 50px;
   text-align: center;
- border: 1px solid var(--main-color);
- border-radius: 50%;
- margin: 10px;
- margin-left: 0;
- line-height: 50px;
- text-transform: uppercase; 
- font-size: 20px;
- cursor: pointer;
+  border: 1px solid var(--main-color);
+  border-radius: 50%;
+  margin: 10px;
+  margin-left: 0;
+  line-height: 50px;
+  text-transform: uppercase;
+  font-size: 20px;
+  cursor: pointer;
 }
 
-.sizeRadioBtn.check{
+.sizeRadioBtn.check {
   background: var(--main-color);
   color: var(--secondary-color);
 }
 
-.btn{
+.btn {
   width: 35%;
   padding: 20px;
   border-radius: 5px;
@@ -354,68 +363,66 @@ section .productsBox .mainProArea .itemCard .itemPrice h5{
   text-transform: capitalize;
 }
 
-.cartButton{
+.cartButton {
   margin-right: 2%;
   background: var(--main-color);
   color: var(--secondary-color);
 }
 
-.rating{
+.rating {
   display: flex;
   margin: 1rem 0.1rem 0.2rem 0.1rem;
 }
 
-.rating img{
+.rating img {
   height: 30px;
   width: 30px;
   margin-left: 5px;
 }
 
-.ratingCount{
+.ratingCount {
   opacity: 0.4;
   font-size: 14px;
   line-height: 40px;
   margin-left: 20px;
 }
 
-
-
-section .productsBox .mainProArea .itemCard .itemPrice h5:nth-child(2){
-    color: gray;
-    font-size: 13px;
+section .productsBox .mainProArea .itemCard .itemPrice h5:nth-child(2) {
+  color: gray;
+  font-size: 13px;
 }
 
-section .productsBox .mainProArea .itemCard .colorTag{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 8px;
-    border-top: 1px solid rgb(0, 0, 0, 0.1);
+section .productsBox .mainProArea .itemCard .colorTag {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+  border-top: 1px solid rgb(0, 0, 0, 0.1);
 }
 
-section .productsBox .mainProArea .itemCard .colorTag .stars{
-    font-size: 14px;
-    color: goldenrod;
+section .productsBox .mainProArea .itemCard .colorTag .stars {
+  font-size: 14px;
+  color: goldenrod;
 }
 
-section .productsBox .mainProArea .itemCard .colorTag button{
-    background: var(--main-color);
-    color: #fff;
-    border: none;
-    padding: 2px 8px;
-    margin-top: 3px;
-    font-weight: bold;
-    border-radius: 2px;
-    border: 1px solid rgb(0, 0, 0, 0.1);
+section .productsBox .mainProArea .itemCard .colorTag button {
+  background: var(--main-color);
+  color: #fff;
+  border: none;
+  padding: 2px 8px;
+  margin-top: 3px;
+  font-weight: bold;
+  border-radius: 2px;
+  border: 1px solid rgb(0, 0, 0, 0.1);
 }
 
-section .productsBox .mainProArea .itemCard .colorTag button:hover{
-    color: var(--main-color);
-    background: rgb(202, 202, 202);
-    border: 1px solid var(--main-color);
+section .productsBox .mainProArea .itemCard .colorTag button:hover {
+  color: var(--main-color);
+  background: rgb(202, 202, 202);
+  border: 1px solid var(--main-color);
 }
 
-section .productsBox .pagination{
+section .productsBox .pagination {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -423,7 +430,7 @@ section .productsBox .pagination{
   margin: 20px 0px 30px 0px;
 }
 
-section .productsBox .pagination a{
+section .productsBox .pagination a {
   width: 20%;
   padding: 8px 0px;
   text-decoration: none;
@@ -433,12 +440,12 @@ section .productsBox .pagination a{
   transition: 0.3s linear;
 }
 
-section .productsBox .pagination a:hover{
+section .productsBox .pagination a:hover {
   color: #fff;
   background: var(--main-color);
 }
 
-section .productsBox .pagination h6{
+section .productsBox .pagination h6 {
   width: 40%;
   text-align: center;
   border-top: 1px solid rgb(0, 0, 0, 0.1);
@@ -447,18 +454,18 @@ section .productsBox .pagination h6{
   color: var(--main-color);
 }
 
-section .productsBox .pagination ion-icon{
+section .productsBox .pagination ion-icon {
   font-size: 18px;
   color: #000;
   margin-bottom: -3px;
 }
 
-section .productsBox .pagination ion-icon:hover{
+section .productsBox .pagination ion-icon:hover {
   font-size: 18px;
   color: #ffffff;
 }
 
-section aside{
+section aside {
   display: flex;
   justify-content: flex-end;
   padding-top: 40px;
@@ -472,7 +479,7 @@ section aside .filterArea {
   margin-right: 10px;
 }
 
-section aside .filterArea .filter{
+section aside .filterArea .filter {
   font-size: 14.8px;
 }
 
@@ -481,14 +488,14 @@ section aside .filterArea .productItems {
   margin-top: 3px;
 }
 
-section aside .itemsCheck{
+section aside .itemsCheck {
   width: 100%;
   height: auto;
   border-top: 1px solid rgb(0, 0, 0, 0.1);
   margin-top: 10px;
 }
 
-section aside .filterArea .clothesChecked{
+section aside .filterArea .clothesChecked {
   width: 100%;
   display: flex;
   align-items: center;
@@ -499,20 +506,20 @@ section aside .filterArea .clothesChecked{
   color: var(--secondary-color);
 }
 
-section aside .filterArea .clothesChecked h6{
- font-size: 16px;
+section aside .filterArea .clothesChecked h6 {
+  font-size: 16px;
 }
 
-section aside .filterArea .clothesChecked i{
-    font-size: 16px;
-   }
+section aside .filterArea .clothesChecked i {
+  font-size: 16px;
+}
 
-section aside .filterArea .itemsCheck_off{
+section aside .filterArea .itemsCheck_off {
   background: none;
   color: #000;
 }
 
-section aside .filterArea .itemsCheck li{
+section aside .filterArea .itemsCheck li {
   width: 90%;
   list-style: none;
   display: flex;
@@ -523,7 +530,7 @@ section aside .filterArea .itemsCheck li{
   font-weight: 500;
 }
 
-section aside .filterArea .itemsCheck li i{
+section aside .filterArea .itemsCheck li i {
   font-size: 28px;
   transition: 0.3s linear;
   cursor: pointer;
@@ -534,75 +541,75 @@ section aside .filterArea .itemsCheck li i{
   color: orangered;
 } */
 
-section aside .filterArea .itemsCheck li .i_active{
+section aside .filterArea .itemsCheck li .i_active {
   color: var(--main-color);
-} 
+}
 
-section aside .filterArea .itemsCheck .priceInput{
+section aside .filterArea .itemsCheck .priceInput {
   position: relative;
   display: flex;
   align-items: center;
 }
 
-section aside .filterArea .itemsCheck .priceInput{
+section aside .filterArea .itemsCheck .priceInput {
   position: relative;
   display: flex;
   align-items: center;
 }
 
-section aside .filterArea .itemsCheck .priceInput::before{
- content: "";
- position: absolute;
- width: 88%;
- height: 3px;
- background: rgb(0, 0, 0, 0.3);
- top: 11px;
- left: 0;
+section aside .filterArea .itemsCheck .priceInput::before {
+  content: "";
+  position: absolute;
+  width: 88%;
+  height: 3px;
+  background: rgb(0, 0, 0, 0.3);
+  top: 11px;
+  left: 0;
 }
 
-section aside .filterArea .itemsCheck .priceInput .priceInput1{
- position: relative;
- width: 44%;
+section aside .filterArea .itemsCheck .priceInput .priceInput1 {
+  position: relative;
+  width: 44%;
 }
 
-section aside .filterArea .itemsCheck .priceInput .priceInput1 input{
+section aside .filterArea .itemsCheck .priceInput .priceInput1 input {
   z-index: 99999999999999999;
   opacity: 0;
   cursor: pointer;
   width: 100%;
 }
 
-section aside .filterArea .itemsCheck .priceInput .priceInput1 i{
- position: absolute;
- top: 0px;
- left: 0%;
- transition: 1s linear;
+section aside .filterArea .itemsCheck .priceInput .priceInput1 i {
+  position: absolute;
+  top: 0px;
+  left: 0%;
+  transition: 1s linear;
 }
 
-section aside .filterArea .itemsCheck .priceInput .priceInput1:nth-child(2) i{
+section aside .filterArea .itemsCheck .priceInput .priceInput1:nth-child(2) i {
   left: 100%;
 }
 
-section aside .filterArea .itemsCheck .prices{
+section aside .filterArea .itemsCheck .prices {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 5px;
 }
 
-section aside .filterArea .itemsCheck .prices h6{
+section aside .filterArea .itemsCheck .prices h6 {
   border: 1px solid rgb(0, 0, 0, 0.3);
   padding: 3px 12px;
   color: rgb(0, 0, 0, 0.8);
 }
 
-section aside .filterArea .itemsCheck .sizesBox{
+section aside .filterArea .itemsCheck .sizesBox {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 }
 
-section aside .filterArea .itemsCheck .sizesBox h6{
+section aside .filterArea .itemsCheck .sizesBox h6 {
   border: 1px solid rgb(0, 0, 0, 0.7);
   color: rgb(0, 0, 0, 0.7);
   padding: 5px 7px;
@@ -610,13 +617,8 @@ section aside .filterArea .itemsCheck .sizesBox h6{
   cursor: pointer;
 }
 
-section aside .filterArea .itemsCheck .sizesBox h6:hover{
+section aside .filterArea .itemsCheck .sizesBox h6:hover {
   border: 1px solid rgb(0, 0, 0, 0.7);
   color: #fff;
   background: rgb(0, 0, 0, 0.7);
 }
-
-
-
-
-

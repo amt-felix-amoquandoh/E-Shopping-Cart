@@ -1,86 +1,83 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,700;0,900;1,200;1,300;1,400;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,700;0,900;1,200;1,300;1,400;1,700;1,800;1,900&display=swap");
 
 @import "./nav.css";
 @import "./footer.css";
 @import "./products.css";
 @import "./singleItem.css";
-@import "./modal.css";
+@import "./checkout.css";
 
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'League Spartan', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
 }
 
 /* Custom properties */
 :root {
-    --dark-color: black;
-    --darkGrey: #383838;
-    --light-color: #fff;
-    --main-color: rgb(0,78,141);
-    --secondary-color: rgb(252,196,55);
-    --alternate: rgb(223,192,163);
-    --alternate1: rgb(100,186,236);
-    --primary-background-color: rgb(2,42,102);
-    --secondary-background-color: rgb(28,28,28);
-    --transparent-light-color: rgba(255, 255, 255, 0.05);
-    --transparent-dark-color: rgba(0, 0, 0, 0.75);
-    --gradient-color: linear-gradient(
-      115deg,
-      #4fcf70,
-      #fad648,
-      #a767e5,
-      #12bcfe,
-      #44ce7b
-    );
-    --font-family: "Poppins", sans-serif;
-    --font-size-xsm: 1.2rem;
-    --font-size-sm: 1.6rem;
-    --font-size-md: 2.4rem;
-    --font-size-lg: 3rem;
-    --font-size-xl: 4rem;
-    --gap: 2rem;
-    --margin-sm: 2rem;
-    --margin-md: 3rem;
-    --item-min-height-sm: 20rem;
-    --item-min-height-md: 30rem;
-  }
-  
+  --dark-color: black;
+  --darkGrey: #383838;
+  --light-color: #fff;
+  --main-color: rgb(0, 78, 141);
+  --secondary-color: rgb(252, 196, 55);
+  --alternate: rgb(223, 192, 163);
+  --alternate1: rgb(100, 186, 236);
+  --primary-background-color: rgb(2, 42, 102);
+  --secondary-background-color: rgb(28, 28, 28);
+  --transparent-light-color: rgba(255, 255, 255, 0.05);
+  --transparent-dark-color: rgba(0, 0, 0, 0.75);
+  --gradient-color: linear-gradient(
+    115deg,
+    #4fcf70,
+    #fad648,
+    #a767e5,
+    #12bcfe,
+    #44ce7b
+  );
+  --font-family: "Poppins", sans-serif;
+  --font-size-xsm: 1.2rem;
+  --font-size-sm: 1.6rem;
+  --font-size-md: 2.4rem;
+  --font-size-lg: 3rem;
+  --font-size-xl: 4rem;
+  --gap: 2rem;
+  --margin-sm: 2rem;
+  --margin-md: 3rem;
+  --item-min-height-sm: 20rem;
+  --item-min-height-md: 30rem;
+}
 
 /* General Styles */
-h1{
-    font-size: 50px;
-    line-height: 64px;
-    color: #222;
+h1 {
+  font-size: 50px;
+  line-height: 64px;
+  color: #222;
 }
 
-h2{
-    font-size: 46px;
-    line-height: 64px;
-    color: #222;
+h2 {
+  font-size: 46px;
+  line-height: 64px;
+  color: #222;
 }
 
-h4{
-    font-size: 20px;
-    color: #222;
-    
+h4 {
+  font-size: 20px;
+  color: #222;
 }
 
-h6{
-    font-weight: 700;
-    font-size: 12px;    
+h6 {
+  font-weight: 700;
+  font-size: 12px;
 }
 
-p{
-    font-size: 16px;
-    color: #464649;
-    margin: 15px 0 20px 0;
+p {
+  font-size: 16px;
+  color: #464649;
+  margin: 15px 0 20px 0;
 }
 
-button.basic{
+button.basic {
   font-size: 1rem;
   font-weight: 600;
   padding: 15px 30px;
@@ -93,788 +90,748 @@ button.basic{
   transition: 0.3s;
 }
 
-button.white{
-    font-size: 1.2rem;
-    font-weight: 600;
-    padding: 12px 18px;
-    color: #fff;
-    background-color: transparent;
-    cursor: pointer;
-    border: 1px solid #fff;
-    outline: none;
-    transition: 0.3s;
-  }
-
-.section-p1{
-    padding: 40px 80px;
+button.white {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 12px 18px;
+  color: #fff;
+  background-color: transparent;
+  cursor: pointer;
+  border: 1px solid #fff;
+  outline: none;
+  transition: 0.3s;
 }
 
-.section-m1{
-    margin: 40px 0;
+.section-p1 {
+  padding: 40px 80px;
 }
 
+.section-m1 {
+  margin: 40px 0;
+}
 
 /* Cover section Styling */
 .newMusicBox {
-  font-family: 'Poppins', sans-serif;
-   position: relative;
-   width: 100%;
-   height: 380px;
-   overflow: hidden;
-  }
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+}
 
-  .newMusicBox img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+.newMusicBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-  .newMusicBox .newMusicText{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 16px;
-    overflow: hidden;
-    background: linear-gradient(8deg, hsla(200, 17%, 14%, 0.897) 14%,
-    hsla(310, 17%, 14%, 0.733) 44%);
-  }
+.newMusicBox .newMusicText {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  overflow: hidden;
+  background: linear-gradient(
+    8deg,
+    hsla(200, 17%, 14%, 0.897) 14%,
+    hsla(310, 17%, 14%, 0.733) 44%
+  );
+}
 
- .newMusicText .musicTitle{
+.newMusicText .musicTitle {
   background-color: #1a1a1a;
   padding: 2px 8px;
-    font-size: 2rem;
-    font-weight: 600;
-    color: var(--secondary-color);
-  }
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
 
-  .newMusicText .genre{
-   font-size: 1.3rem; 
-   font-weight: 600;
-   margin-bottom: 0.5rem;
-   color: var(--light-color);
-  }
+.newMusicText .genre {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--light-color);
+}
 
-  .shopButton{
-        width: 150px;
-        height: 40px;
-        padding: 10px 20px;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        background: var(--main-color);
-        color: var(--secondary-color);
-        text-transform: capitalize;
-        font-size: 18.2px;
-        border-radius: 5px;
-        margin-top: 2rem;
-  }
+.shopButton {
+  width: 150px;
+  height: 40px;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: var(--main-color);
+  color: var(--secondary-color);
+  text-transform: capitalize;
+  font-size: 18.2px;
+  border-radius: 5px;
+  margin-top: 2rem;
+}
 
-  .shopButton:hover{
-    color: var(--main-color);
-    background: var(--secondary-color);
-  }
+.shopButton:hover {
+  color: var(--main-color);
+  background: var(--secondary-color);
+}
 
-  .newMusicBox .newMusicText1{
-    font-family: 'Poppins', sans-serif;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 16px;
-    overflow: hidden;
-    background: linear-gradient(8deg, hsla(201, 22%, 29%, 0.596) 14%,
-    hsla(311, 17%, 43%, 0.685) 44%);
-  }
+.newMusicBox .newMusicText1 {
+  font-family: "Poppins", sans-serif;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  overflow: hidden;
+  background: linear-gradient(
+    8deg,
+    hsla(201, 22%, 29%, 0.596) 14%,
+    hsla(311, 17%, 43%, 0.685) 44%
+  );
+}
 
-  .newMusicText1 .musicTitle{
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: var(--light-color);
-  }
+.newMusicText1 .musicTitle {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--light-color);
+}
 
-  .newMusicText1 .genre{
-   font-size: 1.3rem; 
-   font-weight: 600;
-   margin-bottom: 0.5rem;
-   color: var(--light-color);
-  }
+.newMusicText1 .genre {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--light-color);
+}
 
-  .newMusicText1 p a{
-    color: var(--secondary-color);
-    font-size: larger;
-  }
+.newMusicText1 p a {
+  color: var(--secondary-color);
+  font-size: larger;
+}
 
-  .newMusicText1 ul{
-    color: var(--light-color);   
-    text-align: center;
-  }
+.newMusicText1 ul {
+  color: var(--light-color);
+  text-align: center;
+}
 
-  .newMusicText1 ul li{
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-decoration: none;
-    list-style: none;
-  }
-
+.newMusicText1 ul li {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  list-style: none;
+}
 
 /* Products section styles */
 
+/* Banner styles */
+.banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url("../img/accessories/7.jpg");
+  width: 100%;
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+  margin: 30px 0;
+}
 
- /* Banner styles */
- .banner{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-image: url("../img/accessories/7.jpg");
-    width: 100%;
-    height: 40vh;
-    background-size: cover;
-    background-position: center;
-    margin: 30px 0;
- }
+.banner h4 {
+  color: white;
+  font-size: 2rem;
+}
 
- .banner h4{
-    color: white;
-    font-size: 2rem;
- }
+.banner h2 {
+  color: white;
+  font-size: 3.2rem;
+  padding: 10px 0;
+}
 
- .banner h2{
-    color: white;
-    font-size: 3.2rem;
-    padding: 10px 0;
- }
+.banner h2 span {
+  color: #f60a0a;
+}
 
- .banner h2 span{
-    color: #f60a0a;
- }
+.banner button:hover {
+  background-color: teal;
+  color: whitesmoke;
+}
 
- .banner button:hover{
-    background-color: teal;
-    color: whitesmoke;
- }
+.newsletter {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: black;
+  margin-bottom: -0.3rem;
+}
 
+.newsletter .signUpFrom {
+  display: flex;
+  width: 40%;
+}
 
- .newsletter{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-    background-color: black;
-    margin-bottom: -0.3rem;
- }
+.newsletter h4 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+}
 
- .newsletter .signUpFrom{
-    display: flex;
-    width: 40%;
- }
+.newsletter p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
 
- .newsletter h4{
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: white;
- }
+.newsletter p span {
+  color: rgba(128, 128, 128, 0.747);
+}
 
- .newsletter p {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--secondary-color);
- }
+.newsletter input {
+  height: 3.125rem;
+  padding: 0 1.25rem;
+  font-size: 1rem;
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  outline: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
 
- .newsletter p span{
-    color: rgba(128, 128, 128, 0.747);
- }
+.newsletter button {
+  background-color: var(--main-color);
+  color: white;
+  white-space: nowrap;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-top: -2px;
+}
 
- .newsletter input {
-    height: 3.125rem;
-    padding: 0 1.25rem;
-    font-size: 1rem;
-    width: 100%;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    outline: none;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    
- }
-
- .newsletter button{
-    background-color: var(--main-color);
-    color: white;
-    white-space: nowrap;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    margin-top: -2px;
-
-    
- }
-
- .newsletter button:hover{
-    background-color: black;
-    color: white;
-    border: 1px solid white;
-    
- }
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.newsletter button:hover {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+}
 
 /* Media queries for standar devices */
 /* Tablet view */
-@media (max-width: 830px){
-    body{
-        min-width: 100vw;
-        padding: 0;
-        margin: 0;
-        overflow-x: hidden;
-    }
-
-    .header{
-      height: 80px;
-    }
-    
-    .logoBox img{
-      height: 100px;
-      width: auto;
-    }
-
-    .productInfo{
-      width: 100%;
-      justify-content: space-between;
-      margin: 0;
-      padding: 0;
+@media (max-width: 830px) {
+  body {
+    min-width: 100vw;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
   }
 
-  .sizeRadioBtn{
-    
+  .header {
+    height: 80px;
+  }
+
+  .logoBox img {
+    height: 100px;
+    width: auto;
+  }
+
+  .productInfo {
+    width: 100%;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sizeRadioBtn {
     width: 60px;
     height: 60px;
- 
-   line-height: 60px;
 
-   font-size: 15px;
-}
+    line-height: 60px;
 
-.btn{
-  width: 35%;
-  
-}
+    font-size: 15px;
+  }
 
-.headingOther{
-  font-size: 2.4rem;
-}
+  .btn {
+    width: 35%;
+  }
 
-  .imageSlider{
+  .headingOther {
+    font-size: 2.4rem;
+  }
+
+  .imageSlider {
     width: 50%;
     height: 360px;
     background-position: center;
     margin: 1rem;
-}
-
-.itemDetails{
-  width: 50%;
-  margin: 1rem;
-}
-
-    .mobileMenu{
-      margin-left: 14px;
-    }
-    .section-p1{
-        padding: 60px 30px;
-    }
-
-    
-    .navItems{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        position: fixed;
-        top: 0;
-        right: -300px;
-        height: 100vh;
-        width: 300px;
-        background-color: var(--light-color);
-        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
-        padding: 80px 0 0 16px;
-        transition: 0.3s;
-    }
-
-    .navItems.active{
-        right: 0px;
-    }
-
-    .navItems.hide{
-        right: -300px;
-    }    
-
-    .navBrandImage{
-        margin-left: -80px;
-        height: 9.6rem;
-       
-    }
-
-    .mobileCart{
-        position: relative;
-    }
-
-    .navItems li{
-        margin-bottom: 25px;
-    }
-
-    .navItems li a{
-        color: black;
-    }
-
-    .mobileNav{
-        display: flex;
-        align-items: center;
-        margin-right: -45px;
-    }
-
-    .mobileNav ion-icon{
-        color: black;
-        margin-left: 10px;
-    }
-
-    .mobileMenuClose{
-        position: absolute;
-        top: 30px;
-        left: 30px;
-        color: #222;
-        margin-top: -12px;
-    }
-
-    
-    .products .productsBox {
-        justify-content: center;       
-    }
-
-    .products .product {
-        margin: 20px;
-    }
-
-    .products .product img {
-        height: 18rem;        
-    }
-
-    .products .product .description h5 {
-        margin: 5px;
-        color: rgb(75, 73, 73);
-        line-height: 25px;
-    }
-
-    .products .product .description span {
-        background-color: grey;
-        padding: 8px 8px;
-        font-weight: bold;
-        color: white;
-        font-size: 18px;
-        margin: 0px 5px;
-    }
-
-    .banner {
-        height: 22vh;        
-    }
-
-    .banner h4{
-        font-size: 1.5rem;
-     }
-    
-     .banner h2{
-        font-size: 2.6rem;        
-     }
-
-    footer{
-        padding: 0;
-    }
-
-    .proBanner .promoBox {
-        min-width: 100%;
-        height: 30vh;
-        margin-top: -20px;
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    .productBanners {
-        padding: 0 30px;
-    }
-
-    .productBanners .bannerBox {
-    width: 28%;    
-    }
-
-    .newsletter .signUpFrom {
-        width: 70%;
-    }
-
-    footer .footCol {
-      margin-bottom: 20px;
-    }
-
-   .installBrandImage{
-    height: 5.5rem;
-    margin: -20px;
-}
-
-footer .socialSection ion-icon{
-    color: #202020;
-    display: inline-block;
-       
-    font-size: 24px;
-}
-.shopIcon{
-  margin-left: -30px;
-}
-
-.mobileLogo .navBrandImage{
-   margin-left: -35px;
-}
-
-.mobileLogo h3{
-  color: var(--secondary-color);
-}
-
-section aside .productsBox{
-  width: 70%;
-}
-
-section aside{
-  width: 35%;
-}
-
-section .productsBox .mainProArea .itemCard{
-
-  width: 220px;
-  margin: 6px 0px;
-  /* padding: 5px 10px; */
-}
-
-}
-
-
-@media (max-device-width: 480px){
-  
-   .header{
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: -20px;
-   }
-
-   .newMusicText .musicTitle{
-     font-size: 2.1rem;
-     background: none;
-   }
-
-   .navItems li a.active{
-    color: black;
-}
-
-   .mobileMenu{
-    margin-left: 17.5px;
-    margin-right: -15px;
-   }
-
-   .newMusicText1 .musicTitle{
-    font-size: 1.75rem;
   }
 
-  .shopIcon{
+  .itemDetails {
+    width: 50%;
+    margin: 1rem;
+  }
+
+  .mobileMenu {
+    margin-left: 14px;
+  }
+  .section-p1 {
+    padding: 60px 30px;
+  }
+
+  .navItems {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    height: 100vh;
+    width: 300px;
+    background-color: var(--light-color);
+    box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+    padding: 80px 0 0 16px;
+    transition: 0.3s;
+  }
+
+  .navItems.active {
+    right: 0px;
+  }
+
+  .navItems.hide {
+    right: -300px;
+  }
+
+  .navBrandImage {
+    margin-left: -80px;
+    height: 9.6rem;
+  }
+
+  .mobileCart {
+    position: relative;
+  }
+
+  .navItems li {
+    margin-bottom: 25px;
+  }
+
+  .navItems li a {
+    color: black;
+  }
+
+  .mobileNav {
+    display: flex;
+    align-items: center;
+    margin-right: -45px;
+  }
+
+  .mobileNav ion-icon {
+    color: black;
+    margin-left: 10px;
+  }
+
+  .mobileMenuClose {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    color: #222;
+    margin-top: -12px;
+  }
+
+  .products .productsBox {
+    justify-content: center;
+  }
+
+  .products .product {
+    margin: 20px;
+  }
+
+  .products .product img {
+    height: 18rem;
+  }
+
+  .products .product .description h5 {
+    margin: 5px;
+    color: rgb(75, 73, 73);
+    line-height: 25px;
+  }
+
+  .products .product .description span {
+    background-color: grey;
+    padding: 8px 8px;
+    font-weight: bold;
+    color: white;
+    font-size: 18px;
+    margin: 0px 5px;
+  }
+
+  .banner {
+    height: 22vh;
+  }
+
+  .banner h4 {
+    font-size: 1.5rem;
+  }
+
+  .banner h2 {
+    font-size: 2.6rem;
+  }
+
+  footer {
+    padding: 0;
+  }
+
+  .proBanner .promoBox {
+    min-width: 100%;
+    height: 30vh;
+    margin-top: -20px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .productBanners {
+    padding: 0 30px;
+  }
+
+  .productBanners .bannerBox {
+    width: 28%;
+  }
+
+  .newsletter .signUpFrom {
+    width: 70%;
+  }
+
+  footer .footCol {
+    margin-bottom: 20px;
+  }
+
+  .installBrandImage {
+    height: 5.5rem;
+    margin: -20px;
+  }
+
+  footer .socialSection ion-icon {
+    color: #202020;
+    display: inline-block;
+
+    font-size: 24px;
+  }
+  .shopIcon {
     margin-left: -30px;
   }
 
-  .mobileLogo .navBrandImage{
-     margin-left: -35px;
+  .mobileLogo .navBrandImage {
+    margin-left: -35px;
   }
 
-  .mobileLogo h3{
+  .mobileLogo h3 {
     color: var(--secondary-color);
   }
 
-   .newMusicText .genre{
+  section aside .productsBox {
+    width: 70%;
+  }
+
+  section aside {
+    width: 35%;
+  }
+
+  section .productsBox .mainProArea .itemCard {
+    width: 220px;
+    margin: 6px 0px;
+    /* padding: 5px 10px; */
+  }
+}
+
+@media (max-device-width: 480px) {
+  .header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: -20px;
+  }
+
+  .newMusicText .musicTitle {
+    font-size: 2.1rem;
+    background: none;
+  }
+
+  .navItems li a.active {
+    color: black;
+  }
+
+  .mobileMenu {
+    margin-left: 17.5px;
+    margin-right: -15px;
+  }
+
+  .newMusicText1 .musicTitle {
+    font-size: 1.75rem;
+  }
+
+  .shopIcon {
+    margin-left: -30px;
+  }
+
+  .mobileLogo .navBrandImage {
+    margin-left: -35px;
+  }
+
+  .mobileLogo h3 {
+    color: var(--secondary-color);
+  }
+
+  .newMusicText .genre {
     text-align: center;
   }
 
-.navBrandImage {
+  .navBrandImage {
     height: 6rem;
-}
+  }
 
-.logoBox h3{    
-    font-size: 1.5rem;    
-}
+  .logoBox h3 {
+    font-size: 1.5rem;
+  }
 
-.mobileCart{
+  .mobileCart {
     position: relative;
-}
+  }
 
-.secondHeader{
+  .secondHeader {
     padding: 0;
-}
+  }
 
-.searchBox{
+  .searchBox {
     width: 85vw;
-}
+  }
 
-.searchBtn{
+  .searchBtn {
     width: 30%;
-}
+  }
 
-   h2{
+  h2 {
     font-size: 32px;
     line-height: 55px;
-   }
+  }
 
-   h1{
+  h1 {
     font-size: 30px;
     line-height: 55px;
-   }
+  }
 
-   .cover{
+  .cover {
     padding: 0 20px;
     background-position: 55%;
-   }
+  }
 
-   .cover h4{
+  .cover h4 {
     padding-bottom: 0px;
-}
-
+  }
 
   .products .product {
     width: 100%;
-  } 
+  }
 
   .banner {
-    height: 40vh;        
-   }
+    height: 40vh;
+  }
 
-   .banner h4{
+  .banner h4 {
     font-size: 1.4rem;
     background-color: #1a1a1a;
     padding: 8px 12px;
- }
+  }
 
- .banner h2{
-    font-size: 2rem;        
-   }
+  .banner h2 {
+    font-size: 2rem;
+  }
 
-   .proBanner .promoBox {
-    height: 40vh;    
-}  
-   
-  .productBanners{
+  .proBanner .promoBox {
+    height: 40vh;
+  }
+
+  .productBanners {
     padding: 0 20px;
   }
 
   .productBanners .bannerBox {
     width: 100%;
-}
+  }
 
-.newsletter{
+  .newsletter {
     padding: 40px 20px;
-}
+  }
 
-.newsletter .signUpFrom{
+  .newsletter .signUpFrom {
     width: 100%;
   }
 
-.sectionOfProducts{
+  .sectionOfProducts {
     margin: none;
     width: 100%;
-}
+  }
 
-section .productsBox .mainProArea{
-  justify-content: center; 
-}
+  section .productsBox .mainProArea {
+    justify-content: center;
+  }
 
-section aside .productsBox{
-  width: 58%;
-  height: auto;
-}
+  section aside .productsBox {
+    width: 58%;
+    height: auto;
+  }
 
-section aside{
-  width: 40%;
-}
+  section aside {
+    width: 40%;
+  }
 
-section .productsBox{
-  padding: 0;
-  margin: 0;
-}
+  section .productsBox {
+    padding: 0;
+    margin: 0;
+  }
 
-section .productsBox .mainProArea .itemCard{
+  section .productsBox .mainProArea .itemCard {
+    width: 170px;
+    margin: 6px 0px;
+    /* padding: 5px 10px; */
+  }
 
-  width: 170px;
-  margin: 6px 0px;
-  /* padding: 5px 10px; */
-}
+  section .productsBox section .sortTitle {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-section .productsBox section .sortTitle{
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+  section .productsBox section .sortTitle h4 {
+    margin: 6px;
+  }
 
-section .productsBox section .sortTitle h4{
-  margin: 6px;
-}
+  section .productsBox section .sortTitle button {
+    width: 95px;
+  }
 
+  section .productsBox section .sortTitle button {
+    margin-bottom: 20px;
+  }
 
-section .productsBox section .sortTitle button{
-  width: 95px;
-}
+  section aside .filterArea .itemsCheck li {
+    font-size: 13.4px;
+  }
 
-section .productsBox section .sortTitle button {
-  margin-bottom: 20px;
-}
+  section aside .filterArea .productItems {
+    text-align: center;
+  }
 
-section aside .filterArea .itemsCheck li {
-  font-size: 13.4px;
-}
+  section .productsBox section .sortTitle .sortSelect button ion-icon {
+    font-size: 18px;
+    color: rgb(37, 37, 37);
+  }
 
-section aside .filterArea .productItems {
-  text-align: center;
-}
-
-section .productsBox section .sortTitle .sortSelect button ion-icon{
-   font-size: 18px;
-   color: rgb(37, 37, 37);
-}
-
-section .productsBox section .sortTitle .sortSelect .sortOptions{   
+  section .productsBox section .sortTitle .sortSelect .sortOptions {
     width: 95px;
     padding: 2px 7px 7px 7px;
-}
+  }
 
-section .productsBox section .sortTitle .sortSelect .sortOptions li{    
+  section .productsBox section .sortTitle .sortSelect .sortOptions li {
     font-size: 15px;
-}
+  }
 
-section aside .filterArea .itemsCheck li i{
-  font-size: 30px;
-}
+  section aside .filterArea .itemsCheck li i {
+    font-size: 30px;
+  }
 
-section aside .filterArea .clothesChecked h6{
-  font-size: 12px;
- }
+  section aside .filterArea .clothesChecked h6 {
+    font-size: 12px;
+  }
 
- #footer{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
- }
+  #footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
 
+  .productInfo {
+    width: 100%;
+    flex-wrap: wrap;
+    margin: 2rem 3px 1px 1px;
+    padding: 10px;
+  }
 
- .productInfo{
-  width: 100%;
-  flex-wrap: wrap;
-  margin: 2rem 3px 1px 1px;
-  padding: 10px;
-}
+  .sizeRadioBtn {
+    width: 50px;
+    height: 50px;
 
-.sizeRadioBtn{
+    line-height: 50px;
 
-width: 50px;
-height: 50px;
+    font-size: 12px;
+  }
 
-line-height: 50px;
+  .btn {
+    width: 40%;
+  }
 
-font-size: 12px;
-}
+  .headingOther {
+    font-size: 1.8rem;
+  }
 
-.btn{
-width: 40%;
+  .imageSlider {
+    width: 100%;
+    height: 280px;
+    background-position: center;
+    margin: 0;
+  }
 
-}
-
-.headingOther{
-font-size: 1.8rem;
-}
-
-.imageSlider{
-width: 100%;
-height: 280px;
-background-position: center;
-margin: 0;
-}
-
-.itemDetails{
-width: 100%;
-margin: 0;
-}
-
+  .itemDetails {
+    width: 100%;
+    margin: 0;
+  }
 
   /*  */
   .shopCover h2,
   .appointCover h2,
   .aboutCover h2,
-  .ordersCover h2{
+  .ordersCover h2 {
     margin-bottom: -10px;
     font-size: 1.5rem;
-    
-}
+  }
 
-.shopCover h5,
+  .shopCover h5,
   .appointCover h5,
   .aboutCover h5,
-  .ordersCover h5{
+  .ordersCover h5 {
     color: rgb(24, 24, 24);
     font-size: 0.8rem;
-}
+  }
 
-.shopCoverContent,
+  .shopCoverContent,
   .appointCoverContent,
   .aboutCoverContent,
-  .ordersCoverContent{   
-    padding: 10px;     
-}
+  .ordersCoverContent {
+    padding: 10px;
+  }
 
-.productDetails{
+  .productDetails {
     display: flex;
     flex-direction: column;
     margin-top: -20px;
-}
+  }
 
-.productDetails .singleProductImgs{
-   width: 100%;
-   margin-right: 0px;
-   
-}
-
-#mainProduct{
-    height: 400px;
-}
-
-.productDetails .productDesc{
+  .productDetails .singleProductImgs {
     width: 100%;
-}
+    margin-right: 0px;
+  }
 
+  #mainProduct {
+    height: 400px;
+  }
+
+  .productDetails .productDesc {
+    width: 100%;
+  }
 }
