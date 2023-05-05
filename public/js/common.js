@@ -32,6 +32,102 @@ durationButton.addEventListener("click", () => {
 let newUploads = document.getElementById("newest");
 let lowestPrice = document.getElementById("lowPrice");
 let highestPrice = document.getElementById("highest");
+let clothesOnly = document.getElementById("clothes");
+let accessOnly = document.getElementById("accessories");
+let sportsOnly = document.getElementById("sportwear");
+let lingerie = document.getElementById("lingerie");
+let pillowOnly = document.getElementById("pillow");
+let womenOnly = document.getElementById("women");
+let menOnly = document.getElementById("men");
+let allKids = document.getElementById("allKids");
+
+clothesOnly.addEventListener("click", async () => {
+  clothesOnly.classList.toggle("i_active");
+  clothesOnly.classList.toggle("bi-toggle2-off");
+  clothesOnly.classList.toggle("bi-toggle2-on");
+  // clothesOnly.title = "clothesOff";
+
+  const products = await new Products().getProducts();
+  const ui = new UI();
+  ui.filterProducts(products, "clothes");
+});
+
+accessOnly.addEventListener("click", async () => {
+  accessOnly.classList.toggle("i_active");
+  accessOnly.classList.toggle("bi-toggle2-off");
+  accessOnly.classList.toggle("bi-toggle2-on");
+  // accessOnly.title = "clothesOff";
+
+  const products = await new Products().getProducts();
+  const ui = new UI();
+  ui.filterProducts(products, "accessories");
+});
+
+sportsOnly.addEventListener("click", async () => {
+  sportsOnly.classList.toggle("i_active");
+  sportsOnly.classList.toggle("bi-toggle2-off");
+  sportsOnly.classList.toggle("bi-toggle2-on");
+  // sportsOnly.title = "clothesOff";
+
+  const products = await new Products().getProducts();
+  const ui = new UI();
+  ui.filterProducts(products, "sportswear");
+});
+
+lingerie.addEventListener("click", async () => {
+  lingerie.classList.toggle("i_active");
+  lingerie.classList.toggle("bi-toggle2-off");
+  lingerie.classList.toggle("bi-toggle2-on");
+  // lingerie.title = "clothesOff";
+
+  const products = await new Products().getProducts();
+  const ui = new UI();
+  ui.filterProducts(products, "lingerie");
+});
+
+pillowOnly.addEventListener("click", async () => {
+  pillowOnly.classList.toggle("i_active");
+  pillowOnly.classList.toggle("bi-toggle2-off");
+  pillowOnly.classList.toggle("bi-toggle2-on");
+  // pillowOnly.title = "clothesOff";
+
+  const products = await new Products().getProducts();
+  const ui = new UI();
+  ui.filterProducts(products, "pillow");
+});
+
+womenOnly.addEventListener("click", async () => {
+  womenOnly.classList.toggle("i_active");
+  womenOnly.classList.toggle("bi-toggle2-off");
+  womenOnly.classList.toggle("bi-toggle2-on");
+  // womenOnly.title = "clothesOff";
+
+  const products = await new Products().getProducts();
+  const ui = new UI();
+  ui.filterProducts(products, "women");
+});
+
+menOnly.addEventListener("click", async () => {
+  menOnly.classList.toggle("i_active");
+  menOnly.classList.toggle("bi-toggle2-off");
+  menOnly.classList.toggle("bi-toggle2-on");
+  // menOnly.title = "clothesOff";
+
+  const products = await new Products().getProducts();
+  const ui = new UI();
+  ui.filterProducts(products, "men");
+});
+
+allKids.addEventListener("click", async () => {
+  allKids.classList.toggle("i_active");
+  allKids.classList.toggle("bi-toggle2-off");
+  allKids.classList.toggle("bi-toggle2-on");
+  // allKids.title = "clothesOff";
+
+  const products = await new Products().getProducts();
+  const ui = new UI();
+  ui.filterProducts(products, "kids");
+});
 
 newUploads.addEventListener("click", async () => {
   durationButton.innerHTML = `
@@ -149,24 +245,48 @@ class UI {
     });
   }
 
-  // new function to filter products by price
-  filterProducts(products, sortBy) {
+  filterProducts(products, sortBy, category) {
     let sortedProducts = [];
+    if (category) {
+      sortedProducts = products.filter((product) =>
+        product.id.includes(category)
+      );
+    } else {
+      sortedProducts = [...products];
+    }
     if (sortBy === "newest") {
       // sort by date added (most recent first)
-      sortedProducts = products.sort((a, b) => {
+      sortedProducts = sortedProducts.sort((a, b) => {
         return new Date(b.dateAdded) - new Date(a.dateAdded);
       });
     } else if (sortBy === "lowest") {
       // sort by price (lowest first)
-      sortedProducts = products.sort((a, b) => {
+      sortedProducts = sortedProducts.sort((a, b) => {
         return a.price - b.price;
       });
     } else if (sortBy === "highest") {
       // sort by price (highest first)
-      sortedProducts = products.sort((a, b) => {
+      sortedProducts = sortedProducts.sort((a, b) => {
         return b.price - a.price;
       });
+    } else if (sortBy === "clothes") {
+      // filter products by category (clothes only)
+      sortedProducts = products.filter((item) => item.id === "clothes");
+    } else if (sortBy === "accessories") {
+      // filter products by category (accessories only)
+      sortedProducts = products.filter((item) => item.id === "accessories");
+    } else if (sortBy === "sportwear") {
+      // filter products by category (sportwear only)
+      sortedProducts = products.filter((item) => item.id === "sportwear");
+    } else if (sortBy === "lingerie") {
+      // filter products by category (lingerie only)
+      sortedProducts = products.filter((item) => item.id === "lingerie");
+    } else if (sortBy === "pillow") {
+      // filter products by category (pillow only)
+      sortedProducts = products.filter((item) => item.id === "pillow");
+    } else if (sortBy === "women") {
+      // filter products by category (women only)
+      sortedProducts = products.filter((item) => item.category === "women");
     }
     this.loadAllproducts(sortedProducts);
   }
@@ -213,8 +333,6 @@ class UI {
           <img src="./public/img/star.png" class="star" alt="">
         </div>
         <p class="subHeading">Select Size</p>
-        <input type="radio" name="size" value="xs" checked hidden id="sSize">
-        <label for="sSize" class="sizeRadioBtn check">xs</label>
         <input type="radio" name="size" value="s" hidden id="sSize">
         <label for="sSize" class="sizeRadioBtn check">s</label>
         <input type="radio" name="size" value="m" hidden id="mSize">
