@@ -72,6 +72,7 @@ section .productsBox section .sortTitle button {
   outline: none;
   cursor: pointer;
   font-weight: 600;
+  font-size: larger;
 }
 
 section .productsBox section .sortTitle .sortSelect button ion-icon {

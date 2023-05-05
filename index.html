@@ -88,15 +88,15 @@
       </ul>
 
       <div id="mobile" class="mobileNav">
-        <a class="mobileCart" href="./public/orders.html">
+        <a class="mobileCart" onclick="displayCartOverlay()">
           <div>
-            <div onclick="displayCartOverlay()" class="carty">
+            <div class="carty">
               <img
                 src="./public/img/icons/shop-bag.png"
                 class="shopIcon"
                 alt=""
               />
-              <div class="cartAmount" id="itemsUpdate">0</div>
+              <div class="cartAmount" id="mobileItemsUpdate">0</div>
             </div>
           </div>
         </a>
@@ -130,7 +130,7 @@
           </div> -->
           </div>
           <div class="cartFooter">
-            <h3>Total : Ghc <span class="ItemsTotal">0</span></h3>
+            <h3>Total : $ <span class="ItemsTotal">0</span></h3>
             <button class="cartFooterButton">Clear Cart</button>
             <button class="checkoutButton">
               <a href="./checkout.html">Checkout</a>
@@ -305,7 +305,7 @@
                 <li id="newest">Newest</li>
                 <li id="allProducts">All products</li>
                 <li id="lowPrice">Lowest</li>
-                <li id="trendy">Highest</li>
+                <li id="highest">Highest</li>
               </div>
             </div>
           </div>

@@ -6,7 +6,7 @@ const ClearCartBtn = document.querySelector(".cartFooterButton");
 const cartArea = document.querySelector(".cart");
 const cartOverlay = document.querySelector(".cartOverlay");
 const cartItemsQuantity = document.getElementById("itemsUpdate");
-// const mobileItemsQuantity = document.getElementById("mobileItemsUpdate");
+const mobileItemsQuantity = document.getElementById("mobileItemsUpdate");
 const cartTotal = document.querySelector(".ItemsTotal");
 const overlayCartContent = document.querySelector(".overlayCartContent");
 
@@ -29,10 +29,29 @@ class Products {
       let data = await result.json();
       let products = data.items;
       products = products.map((item) => {
-        const { title, price, description, category } = item.fields;
+        const {
+          title,
+          price,
+          description,
+          category,
+          brief,
+          image1,
+          image2,
+          image3,
+        } = item.fields;
         const { id } = item.sys;
         const image = item.fields.image.fields.file.url;
-        return { title, price, description, id, image };
+        return {
+          title,
+          price,
+          description,
+          id,
+          image,
+          brief,
+          image1,
+          image2,
+          image3,
+        };
       });
       return products;
     } catch (error) {
@@ -68,20 +87,23 @@ class UI {
         </a>
         <!-- single product ends here -->
         `;
+      productArea.innerHTML = itemResult;
     });
-    productArea.innerHTML = itemResult;
+
     // add event listener to each product item
     const productCards = document.querySelectorAll(".itemCard");
     productCards.forEach((card) => {
       card.addEventListener("click", () => {
         const productId = card.dataset.id;
-        this.displayProductDetails(productId);
+        // retrieve the product object using the ID
+        const product = products.find((p) => p.id === productId);
+        this.displayProductDetails(product);
       });
     });
   }
 
   displayProductDetails(product) {
-    console.log(`Product ${product} details displayed`);
+    console.log(`Product ${product.image} details displayed`);
     const modalContainer = document.querySelector(".modal-container");
     const closeModalBtn = document.querySelector("#close-modal-btn");
 
@@ -92,6 +114,7 @@ class UI {
       modalContainer.removeChild(itemPage);
     });
 
+    console.log(product);
     const { id, title, description, price, image, brief } = product;
 
     let itemPage = document.createElement("div");
@@ -102,16 +125,16 @@ class UI {
         <h4 class="selectImage">Select image file below to view</h4>
         <div class="productImages">
           <img src=${product.image} alt="">
-          <img src=${image} alt="">
-          <img src=${image} alt="">
-          <img src=${image} alt="">
+          <img src=${product.image} alt="">         
+          <img src=${product.image} alt="">
+          <img src=${product.image} alt="">
         </div>
       </div>
       <div class="ItemDetails">
-        <h2 class="productBrand">${title}</h2>
-        <h4 class="itemDescription"><b>${description}</b></h4>
-        <p class="itemDescription">${brief}</p>
-        <span class="itemPrice">$${price}</span>
+        <h2 class="productBrand">${product.title}</h2>
+        <h4 class="itemDescription"><b>${product.description}</b></h4>
+        <p class="itemDescription">${product.brief}</p>
+        <span class="itemPrice">$${product.price}</span>
         <span class="itemDiscount">(50% Off)</span>
         <div class="rating">
           <img src="./public/img/star-filled.png" class="star" alt="">
@@ -123,7 +146,7 @@ class UI {
         <p class="subHeading">Select Size</p>
         <input type="radio" name="size" value="xs" checked hidden id="sSize">
         <label for="sSize" class="sizeRadioBtn check">xs</label>
-        <input type="radio" name="size" value="s" checked hidden id="sSize">
+        <input type="radio" name="size" value="s" hidden id="sSize">
         <label for="sSize" class="sizeRadioBtn check">s</label>
         <input type="radio" name="size" value="m" hidden id="mSize">
         <label for="mSize" class="sizeRadioBtn">m</label>
@@ -133,11 +156,53 @@ class UI {
         <label for="xlSize" class="sizeRadioBtn">xl</label>
         <input type="radio" name="size" value="xxl" hidden id="xxlSize">
         <label for="xxlSize" class="sizeRadioBtn">xxl</label>
-        <button class="btn cartButton proCart" data-id=${id}>Add to Cart</button>
+        <button class="btn cartButton proCart" data-id=${product.id}>Add to Cart</button>
       </div>
     `;
 
     modalContainer.appendChild(itemPage);
+
+    // Append the product page to the new window
+    const imagesOfItems = document.querySelectorAll(".productImages img");
+    const itemsSlider = document.querySelector(".imageSlider");
+
+    let activeSliderImage = 0;
+
+    imagesOfItems.forEach((item, i) => {
+      item.addEventListener("click", () => {
+        imagesOfItems[activeSliderImage].classList.remove("active");
+        item.classList.add("active");
+        itemsSlider.style.backgroundImage = `url("${item.src}")`;
+        activeSliderImage = i;
+      });
+    });
+
+    // Selecting sizes
+
+    const sizeButtons = document.querySelectorAll(".sizeRadioBtn");
+    let checkedButton = 0;
+
+    sizeButtons.forEach((item, i) => {
+      item.addEventListener("click", () => {
+        sizeButtons[checkedButton].classList.remove("check");
+        item.classList.add("check");
+        checkedButton = i;
+      });
+    });
+
+    let ratingsInput = [...document.querySelectorAll(".star")];
+
+    ratingsInput.map((star, index) => {
+      star.addEventListener("click", () => {
+        for (let i = 0; i < 5; i++) {
+          if (i <= index) {
+            ratingsInput[i].src = `/public/img/star-filled.png`;
+          } else {
+            ratingsInput[i].src = `/public/img/star.png`;
+          }
+        }
+      });
+    });
   }
   getAddToCartBtns() {
     const addToCartButtons = [...document.querySelectorAll(".proCart")];
@@ -146,12 +211,12 @@ class UI {
       let id = button.dataset.id;
       let alreadySelectedItem = cartBasket.find((item) => item.id === id);
       if (alreadySelectedItem) {
-        button.innerText = "In Cart";
+        button.innerText = "Added";
         button.disabled = true;
-        // button.parentElement.parentElement.firstElementChild.innerText = "In Cart";
+        // button.parentElement.parentElement.firstElementChild.innerText = "Added";
       }
       button.addEventListener("click", (event) => {
-        event.target.innerText = "In Cart";
+        event.target.innerText = "Added";
         event.target.disabled = true;
         // event.target.parentElement.parentElement.firstElementChild.innerText = "In Cart"
         //get item from products
@@ -174,6 +239,7 @@ class UI {
       });
     });
   }
+
   setCartItemValues(cartBasket) {
     let itemTotal = 0;
     let itemsTotal = 0;
@@ -183,7 +249,7 @@ class UI {
     });
     cartTotal.innerText = parseFloat(itemTotal.toFixed(2));
     cartItemsQuantity.innerText = itemsTotal;
-    // mobileItemsQuantity.innerText = itemsTotal;
+    mobileItemsQuantity.innerText = itemsTotal;
   }
   addCartItemToCart(item) {
     const itemDiv = document.createElement("div");
