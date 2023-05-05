@@ -1,5 +1,5 @@
 {
-  "name": "e-shopping-cart",
+  "name": "kosafrique",
   "version": "1.0.0",
   "description": "A simple online shop",
   "main": "index.js",
@@ -19,5 +19,13 @@
     "nodemailer": "^6.9.1",
     "nodemon": "^2.0.22",
     "uuid": "^9.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felixEKow/E-Shopping-Cart.git"
+  },
+  "bugs": {
+    "url": "https://github.com/felixEKow/E-Shopping-Cart/issues"
+  },
+  "homepage": "https://github.com/felixEKow/E-Shopping-Cart#readme"
 }
