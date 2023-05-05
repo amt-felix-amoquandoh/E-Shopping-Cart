@@ -33,8 +33,8 @@
         <h3><i>Kosafrique</i></h3>
       </div>
       <ul class="navItems" id="navItems">
-        <li><a href="./public/index.html" class="active">Shop</a></li>
-        <li><a href="./public/aboutus.html">About Us</a></li>
+        <li><a href="./index.html" class="active">Shop</a></li>
+        <li><a href="./aboutus.html">About Us</a></li>
         <li class="">
           <span class="loginArea" id="loginArea">
             <img
@@ -64,7 +64,7 @@
           </div>
         </li>
         <li>
-          <a href="">
+          <a onclick="displayCartOverlay()">
             <div class="cartBox">
               <div class="carty">
                 <img
@@ -88,7 +88,7 @@
       </ul>
 
       <div id="mobile" class="mobileNav">
-        <a class="mobileCart" href="./public/orders.html">
+        <a class="mobileCart" onclick="displayCartOverlay()">
           <div>
             <div class="carty">
               <img
@@ -96,7 +96,7 @@
                 class="shopIcon"
                 alt=""
               />
-              <div class="cartAmount" id="itemsUpdate">0</div>
+              <div class="cartAmount" id="mobileItemsUpdate">0</div>
             </div>
           </div>
         </a>
@@ -199,6 +199,6 @@
 
   <script src="./public/js/home.js"></script>
   <script src="./public/js/nav.js"></script>
-  <script src="./public/js/addProduct.js"></script>
+  <script src="./public/js/common.js"></script>
   <script src="./public/js/checkout.js"></script>
 </html>

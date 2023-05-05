@@ -542,6 +542,10 @@ button.white {
     width: 80vw;
   }
 
+  .newMusicText1 .musicTitle {
+    font-size: 1.8rem;
+  }
+
   .btn {
     width: 45%;
   }

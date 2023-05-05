@@ -139,6 +139,11 @@ app.get("/addProduct", (req, res) => {
 });
 
 //checkout
+app.get("/aboutus", (req, res) => {
+  res.sendFile("aboutus.html", { root: "public" });
+});
+
+//checkout
 app.get("/checkout", (req, res) => {
   res.sendFile("checkout.html", { root: "public" });
 });

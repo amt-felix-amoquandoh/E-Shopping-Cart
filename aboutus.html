@@ -10,117 +10,163 @@
       href="./public/img/icons/brand.png"
     />
     <title>About Us | Kosafrique</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"
+    />
     <!-- <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     /> -->
     <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-/>
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="./public/css/home.css" />
   </head>
   <body>
     <!-- Project starts here-->
     <!-- Nav Bar section -->
     <section class="header" id="header">
-        <div class="logoBox">          
-            <img src="./public/img/icons/brand.png" class="navBrandImage" alt="" />
-          <h3><i>Kosafrique</i></h3>
-        </div>
-          <ul class="navItems" id="navItems">
-            <li><a href="./public/index.html" >Shop</a></li>
-            <li><a href="./public/aboutus.html" class="active">About Us</a></li>
-            <li class=""> <span class="loginArea" id="loginArea">
-             
-              <img width="40px" height="40px" src="./public/img/icons/user.png" 
-              class="userLogo" alt="">
-              
-              <div class="loginPopUp hide">
-                <p class="accountInfo">Logged in as, <b>name</b></p>
-                <button class="btn" id="userBtn">Log out</button>
-              </div>
-            </span>
-            <div class="mobileLogo hide">          
-              <img width="auto" height="90px" src="./public/img/icons/brand.png" class="navBrandImage" alt="" />
+      <div class="logoBox">
+        <img src="./public/img/icons/brand.png" class="navBrandImage" alt="" />
+        <h3><i>Kosafrique</i></h3>
+      </div>
+      <ul class="navItems" id="navItems">
+        <li><a href="./index.html">Shop</a></li>
+        <li><a href="./aboutus.html" class="active">About Us</a></li>
+        <li class="">
+          <span class="loginArea" id="loginArea">
+            <img
+              width="40px"
+              height="40px"
+              src="./public/img/icons/user.png"
+              class="userLogo"
+              alt=""
+            />
+
+            <div class="loginPopUp hide">
+              <p class="accountInfo">
+                Logged in as, <b><i>name</i></b>
+              </p>
+              <button class="btn" id="userBtn">Log out</button>
+            </div>
+          </span>
+          <div class="mobileLogo hide">
+            <img
+              width="auto"
+              height="90px"
+              src="./public/img/icons/brand.png"
+              class="navBrandImage"
+              alt=""
+            />
             <h3><i>Kosafrique</i></h3>
           </div>
-    
-            
-          </li>
-            <li>
-              <a href="">
-                <div class="cartBox">
-                  <div class="carty">
-                    <img src="./public/img/icons/shop-bag.png" class="shopIcon" alt="" />
-                    <div class="cartAmount" id="itemsUpdate">0</div>
-                  </div>               
-              </div>
-              </a>
-            </li>
-            <a href="#">
-              <ion-icon
-                id="mobileMenuClose"
-                class="mobileMenuClose"
-                size="large"
-                name="close-circle-outline"
-              ></ion-icon>
-            </a>
-          </ul>
-        
-        <div id="mobile" class="mobileNav">
-          <a class="mobileCart" href="./public/orders.html">
-            <div>
+        </li>
+        <li>
+          <a onclick="displayCartOverlay()">
+            <div class="cartBox">
               <div class="carty">
-                <img src="./public/img/icons/shop-bag.png" class="shopIcon" alt="" />
+                <img
+                  src="./public/img/icons/shop-bag.png"
+                  class="shopIcon"
+                  alt=""
+                />
                 <div class="cartAmount" id="itemsUpdate">0</div>
-              </div>   
+              </div>
             </div>
           </a>
-          <img width="40px" height="40px" src="./public/img/icons/menu.png" id="mobileMenu"
-          class="mobileMenu" alt="">
-        </div>
-      </section>
-               <!--  -->
-      <section class="header secondHeader" id="header">
-        <div class="searchBox">
-          <input type="text" class="searchInput" placeholder="search product, brand">
-          <button class="searchBtn">Search</button>
-        </div>
-      </section>
+        </li>
+        <a href="#">
+          <ion-icon
+            id="mobileMenuClose"
+            class="mobileMenuClose"
+            size="large"
+            name="close-circle-outline"
+          ></ion-icon>
+        </a>
+      </ul>
+
+      <div id="mobile" class="mobileNav">
+        <a class="mobileCart" onclick="displayCartOverlay()">
+          <div>
+            <div class="carty">
+              <img
+                src="./public/img/icons/shop-bag.png"
+                class="shopIcon"
+                alt=""
+              />
+              <div class="cartAmount" id="mobileItemsUpdate">0</div>
+            </div>
+          </div>
+        </a>
+        <img
+          width="40px"
+          height="40px"
+          src="./public/img/icons/menu.png"
+          id="mobileMenu"
+          class="mobileMenu"
+          alt=""
+        />
+      </div>
+    </section>
+    <!--  -->
+
     <!-- Nav Bar section -->
 
-   
-
-      <!-- newsletter section -->
-      <section id="newsletter" class="newsletter section-p1 section-m1">
-        <div class="news">
-          <h4
-            class="animate__animated animate__bounce animate__repeat-3 animate__delay-4s"
-          >
-            Sign Up to see new Products.
-          </h4>
-          <p>
-            Get Social media and e-mail Updates <span>about the latest.</span>
-          </p>
+    <!-- cart overlay -->
+    <section id="cartOverlay">
+      <div class="cartOverlay">
+        <div class="cart">
+          <div class="miniCart">
+            <h2>Your Cart</h2>
+            <span class="closeCart">
+              <ion-icon size="large" name="close-circle-outline"></ion-icon>
+            </span>
+          </div>
+          <div class="overlayCartContent">
+            <!-- <div class="cartItem">
+            
+          </div> -->
+          </div>
+          <div class="cartFooter">
+            <h3>Total : $ <span class="ItemsTotal">0</span></h3>
+            <button class="cartFooterButton">Clear Cart</button>
+            <button class="checkoutButton">
+              <a href="./checkout.html">Checkout</a>
+            </button>
+          </div>
         </div>
-        <div class="signUpFrom">
-          <input type="text" placeholder="Add your email here" />
-          <button class="basic">Sign Up</button>
-        </div>
-      </section>
-      <!-- newsletter section ends here -->
-  
-      <!-- footere section -->
-      <div id="footer">
-         <span class="copyright">&copy; 2023 KOSAFRIQUE, Inc. All rights reserved</span>
       </div>
-      <!-- footere section ends here -->
-  
+    </section>
+    <!-- cartoverlay ends here -->
 
+    <!-- newsletter section -->
+    <section id="newsletter" class="newsletter section-p1 section-m1">
+      <div class="news">
+        <h4
+          class="animate__animated animate__bounce animate__repeat-3 animate__delay-4s"
+        >
+          Sign Up to see new Products.
+        </h4>
+        <p>
+          Get Social media and e-mail Updates <span>about the latest.</span>
+        </p>
+      </div>
+      <div class="signUpFrom">
+        <input type="text" placeholder="Add your email here" />
+        <button class="basic">Sign Up</button>
+      </div>
+    </section>
+    <!-- newsletter section ends here -->
 
-    
+    <!-- footere section -->
+    <div id="footer">
+      <span class="copyright"
+        >&copy; 2023 KOSAFRIQUE, Inc. All rights reserved</span
+      >
+    </div>
+    <!-- footere section ends here -->
 
     <!-- Project ends here-->
   </body>
@@ -135,7 +181,5 @@
 
   <script src="./public/js/home.js"></script>
   <script src="./public/js/nav.js"></script>
-  <!-- <script src="./public/js/filter.js"></script> -->
-  
- 
+  <script src="./public/js/common.js"></script>
 </html>

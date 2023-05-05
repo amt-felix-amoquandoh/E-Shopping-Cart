@@ -21,6 +21,53 @@ function displayCartOverlay() {
   cartArea.classList.toggle("showCart");
 }
 
+let durationButton = document.getElementById("durationSortBtn");
+let durationOptions = document.getElementsByClassName("sortOptions")[0];
+
+durationButton.addEventListener("click", () => {
+  durationOptions.classList.toggle("sortOptions_active");
+});
+
+//...
+let newUploads = document.getElementById("newest");
+let lowestPrice = document.getElementById("lowPrice");
+let highestPrice = document.getElementById("highest");
+
+newUploads.addEventListener("click", async () => {
+  durationButton.innerHTML = `
+        <h5>Sort By: Newest</h5>
+        <ion-icon name="chevron-down-outline"></ion-icon>
+       `;
+  durationOptions.classList.toggle("sortOptions_active");
+
+  const products = await new Products().getProducts();
+  const ui = new UI();
+  ui.filterProducts(products, "newest");
+});
+
+lowestPrice.addEventListener("click", async () => {
+  durationButton.innerHTML = `
+        <h5>Sort By: Lowest</h5>
+        <ion-icon name="chevron-down-outline"></ion-icon>
+       `;
+  durationOptions.classList.toggle("sortOptions_active");
+  const products = await new Products().getProducts();
+  const ui = new UI();
+  ui.filterProducts(products, "lowest");
+});
+
+highestPrice.addEventListener("click", async () => {
+  durationButton.innerHTML = `
+        <h5>Sort By: Highest</h5>
+        <ion-icon name="chevron-down-outline"></ion-icon>
+       `;
+  durationOptions.classList.toggle("sortOptions_active");
+  const products = await new Products().getProducts();
+  const ui = new UI();
+  ui.filterProducts(products, "highest");
+});
+
+//...
 // display products implementation
 class Products {
   async getProducts() {
@@ -102,6 +149,28 @@ class UI {
     });
   }
 
+  // new function to filter products by price
+  filterProducts(products, sortBy) {
+    let sortedProducts = [];
+    if (sortBy === "newest") {
+      // sort by date added (most recent first)
+      sortedProducts = products.sort((a, b) => {
+        return new Date(b.dateAdded) - new Date(a.dateAdded);
+      });
+    } else if (sortBy === "lowest") {
+      // sort by price (lowest first)
+      sortedProducts = products.sort((a, b) => {
+        return a.price - b.price;
+      });
+    } else if (sortBy === "highest") {
+      // sort by price (highest first)
+      sortedProducts = products.sort((a, b) => {
+        return b.price - a.price;
+      });
+    }
+    this.loadAllproducts(sortedProducts);
+  }
+
   displayProductDetails(product) {
     console.log(`Product ${product.image} details displayed`);
     const modalContainer = document.querySelector(".modal-container");
@@ -156,7 +225,7 @@ class UI {
         <label for="xlSize" class="sizeRadioBtn">xl</label>
         <input type="radio" name="size" value="xxl" hidden id="xxlSize">
         <label for="xxlSize" class="sizeRadioBtn">xxl</label>
-        <button class="btn cartButton proCart" data-id=${product.id}>Add to Cart</button>
+        <button class="btn cartButton" data-id=${product.id}>Add to Cart</button>
       </div>
     `;
 
@@ -201,6 +270,43 @@ class UI {
             ratingsInput[i].src = `/public/img/star.png`;
           }
         }
+      });
+    });
+
+    const addToCartButtons = itemPage.querySelectorAll(".btn");
+    addToCartButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const productId = button.dataset.id;
+
+        let id = button.dataset.id;
+        let alreadySelectedItem = cartBasket.find((item) => item.id === id);
+        if (alreadySelectedItem) {
+          button.innerText = "Added";
+          button.disabled = true;
+          // button.parentElement.parentElement.firstElementChild.innerText = "Added";
+        }
+        button.addEventListener("click", (event) => {
+          event.target.innerText = "Added";
+          event.target.disabled = true;
+          // event.target.parentElement.parentElement.firstElementChild.innerText = "In Cart"
+          //get item from products
+          let selectedItem = { ...Storage.getProduct(id), amount: 1 };
+
+          //add item to cart
+          cartBasket = [...cartBasket, selectedItem];
+
+          //save in local storage
+          Storage.saveCart(cartBasket);
+
+          //set cart values
+          this.setCartItemValues(cartBasket);
+
+          //display cart item
+          this.addCartItemToCart(selectedItem);
+
+          //show the cart overlay
+          // this.displayCartOverlay();
+        });
       });
     });
   }
