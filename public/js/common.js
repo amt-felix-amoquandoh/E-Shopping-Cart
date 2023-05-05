@@ -89,7 +89,7 @@ class UI {
 
     closeModalBtn.addEventListener("click", () => {
       modalContainer.classList.remove("show-modal");
-      modalContainer.remove(itemPage);
+      modalContainer.removeChild(itemPage);
     });
 
     const { id, title, description, price, image, brief } = product;
