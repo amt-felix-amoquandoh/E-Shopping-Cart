@@ -20,7 +20,7 @@ const getAddress = () => {
 
   if (
     !address.length ||
-    !street.state ||
+    !street.length ||
     !city.length ||
     !state.length ||
     !zipcode.length ||
@@ -28,6 +28,7 @@ const getAddress = () => {
   ) {
     return showFormError("fill all inputs first");
   } else {
+    console.log("yeah fuckerssssssssss");
     return { address, street, city, state, zipcode, landmark };
   }
 };
