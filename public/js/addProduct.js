@@ -105,7 +105,7 @@ const women = async () => {
 
   const products = await new Products().getProducts();
   const ui = new UI();
-  ui.filterProducts(products, "women");
+  ui.filterProducts(products, " newest", "", "women");
 };
 const men = async () => {
   menOnly.classList.toggle("i_active");
