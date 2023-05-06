@@ -230,6 +230,7 @@
             </div>
             <li>
               Clothing<i
+                onclick="clothes()"
                 id="clothes"
                 class="bi bi-toggle2-off"
                 title="clothesOn"
@@ -237,6 +238,7 @@
             </li>
             <li>
               Accessories<i
+                onclick="accessories()"
                 id="accessories"
                 class="bi bi-toggle2-off"
                 title="accessoriesOn"
@@ -244,6 +246,7 @@
             </li>
             <li>
               Sports Wear<i
+                onclick="sportwear()"
                 id="sportwear"
                 class="bi bi-toggle2-off"
                 title="sportsOn"
@@ -251,6 +254,7 @@
             </li>
             <li>
               Lingerie<i
+                onclick="lingerie()"
                 id="lingerie"
                 class="bi bi-toggle2-off"
                 title="lingerieOn"
@@ -258,6 +262,7 @@
             </li>
             <li>
               Pillow Cases<i
+                onclick="pillow()"
                 id="pillow"
                 class="bi bi-toggle2-off"
                 title="pillowOn"
@@ -297,7 +302,7 @@
           <div class="sortTitle">
             <h4><i>Kosafrique Shop</i></h4>
             <div class="sortSelect">
-              <button id="durationSortBtn">
+              <button onclick="durationSort()" id="durationSortBtn">
                 <h5>Sort By</h5>
                 <ion-icon name="chevron-down-outline"></ion-icon>
               </button>
@@ -704,7 +709,7 @@
 
   <script src="./public/js/home.js"></script>
   <script src="./public/js/nav.js"></script>
-  <script src="./public/js/common.js"></script>
+  <script src="./public/js/addProduct.js"></script>
   <script type="module">
     import Swiper from "https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.min.js";
 

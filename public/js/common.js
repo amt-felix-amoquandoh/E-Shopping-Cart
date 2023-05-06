@@ -5,6 +5,7 @@ const closeCartBtn = document.querySelector(".closeCart");
 const ClearCartBtn = document.querySelector(".cartFooterButton");
 const cartArea = document.querySelector(".cart");
 const cartOverlay = document.querySelector(".cartOverlay");
+
 const cartItemsQuantity = document.getElementById("itemsUpdate");
 const mobileItemsQuantity = document.getElementById("mobileItemsUpdate");
 const cartTotal = document.querySelector(".ItemsTotal");
@@ -24,9 +25,9 @@ function displayCartOverlay() {
 let durationButton = document.getElementById("durationSortBtn");
 let durationOptions = document.getElementsByClassName("sortOptions")[0];
 
-durationButton.addEventListener("click", () => {
+function durationSort() {
   durationOptions.classList.toggle("sortOptions_active");
-});
+}
 
 //...
 let newUploads = document.getElementById("newest");
@@ -41,7 +42,7 @@ let womenOnly = document.getElementById("women");
 let menOnly = document.getElementById("men");
 let allKids = document.getElementById("allKids");
 
-clothesOnly.addEventListener("click", async () => {
+const clothes = async () => {
   clothesOnly.classList.toggle("i_active");
   clothesOnly.classList.toggle("bi-toggle2-off");
   clothesOnly.classList.toggle("bi-toggle2-on");
@@ -50,9 +51,9 @@ clothesOnly.addEventListener("click", async () => {
   const products = await new Products().getProducts();
   const ui = new UI();
   ui.filterProducts(products, "clothes");
-});
+};
 
-accessOnly.addEventListener("click", async () => {
+const accessories = async () => {
   accessOnly.classList.toggle("i_active");
   accessOnly.classList.toggle("bi-toggle2-off");
   accessOnly.classList.toggle("bi-toggle2-on");
@@ -61,9 +62,9 @@ accessOnly.addEventListener("click", async () => {
   const products = await new Products().getProducts();
   const ui = new UI();
   ui.filterProducts(products, "accessories");
-});
+};
 
-sportsOnly.addEventListener("click", async () => {
+const sportswear = async () => {
   sportsOnly.classList.toggle("i_active");
   sportsOnly.classList.toggle("bi-toggle2-off");
   sportsOnly.classList.toggle("bi-toggle2-on");
@@ -72,9 +73,9 @@ sportsOnly.addEventListener("click", async () => {
   const products = await new Products().getProducts();
   const ui = new UI();
   ui.filterProducts(products, "sportswear");
-});
+};
 
-lingerie.addEventListener("click", async () => {
+const lingerieOnly = async () => {
   lingerie.classList.toggle("i_active");
   lingerie.classList.toggle("bi-toggle2-off");
   lingerie.classList.toggle("bi-toggle2-on");
@@ -83,9 +84,9 @@ lingerie.addEventListener("click", async () => {
   const products = await new Products().getProducts();
   const ui = new UI();
   ui.filterProducts(products, "lingerie");
-});
+};
 
-pillowOnly.addEventListener("click", async () => {
+const pillow = async () => {
   pillowOnly.classList.toggle("i_active");
   pillowOnly.classList.toggle("bi-toggle2-off");
   pillowOnly.classList.toggle("bi-toggle2-on");
@@ -94,9 +95,9 @@ pillowOnly.addEventListener("click", async () => {
   const products = await new Products().getProducts();
   const ui = new UI();
   ui.filterProducts(products, "pillow");
-});
+};
 
-womenOnly.addEventListener("click", async () => {
+const women = async () => {
   womenOnly.classList.toggle("i_active");
   womenOnly.classList.toggle("bi-toggle2-off");
   womenOnly.classList.toggle("bi-toggle2-on");
@@ -105,9 +106,8 @@ womenOnly.addEventListener("click", async () => {
   const products = await new Products().getProducts();
   const ui = new UI();
   ui.filterProducts(products, "women");
-});
-
-menOnly.addEventListener("click", async () => {
+};
+const men = async () => {
   menOnly.classList.toggle("i_active");
   menOnly.classList.toggle("bi-toggle2-off");
   menOnly.classList.toggle("bi-toggle2-on");
@@ -116,9 +116,8 @@ menOnly.addEventListener("click", async () => {
   const products = await new Products().getProducts();
   const ui = new UI();
   ui.filterProducts(products, "men");
-});
-
-allKids.addEventListener("click", async () => {
+};
+const kidsAndAll = async () => {
   allKids.classList.toggle("i_active");
   allKids.classList.toggle("bi-toggle2-off");
   allKids.classList.toggle("bi-toggle2-on");
@@ -127,21 +126,20 @@ allKids.addEventListener("click", async () => {
   const products = await new Products().getProducts();
   const ui = new UI();
   ui.filterProducts(products, "kids");
-});
+};
 
-newUploads.addEventListener("click", async () => {
+const newest = async () => {
   durationButton.innerHTML = `
-        <h5>Sort By: Newest</h5>
-        <ion-icon name="chevron-down-outline"></ion-icon>
-       `;
+  <h5>Sort By: Newest</h5>
+  <ion-icon name="chevron-down-outline"></ion-icon>
+ `;
   durationOptions.classList.toggle("sortOptions_active");
 
   const products = await new Products().getProducts();
   const ui = new UI();
   ui.filterProducts(products, "newest");
-});
-
-lowestPrice.addEventListener("click", async () => {
+};
+const lowest = async () => {
   durationButton.innerHTML = `
         <h5>Sort By: Lowest</h5>
         <ion-icon name="chevron-down-outline"></ion-icon>
@@ -150,18 +148,17 @@ lowestPrice.addEventListener("click", async () => {
   const products = await new Products().getProducts();
   const ui = new UI();
   ui.filterProducts(products, "lowest");
-});
-
-highestPrice.addEventListener("click", async () => {
+};
+const highest = async () => {
   durationButton.innerHTML = `
-        <h5>Sort By: Highest</h5>
-        <ion-icon name="chevron-down-outline"></ion-icon>
-       `;
+  <h5>Sort By: Highest</h5>
+  <ion-icon name="chevron-down-outline"></ion-icon>
+ `;
   durationOptions.classList.toggle("sortOptions_active");
   const products = await new Products().getProducts();
   const ui = new UI();
   ui.filterProducts(products, "highest");
-});
+};
 
 //...
 // display products implementation
@@ -205,46 +202,6 @@ class Products {
 
 // display products implementation
 class UI {
-  loadAllproducts(products) {
-    let itemResult = "";
-    products.forEach((product) => {
-      itemResult += `
-        <!-- single Product -->
-        <a class="itemCard" data-id="${product.id}">
-          <img src=${product.image} alt="">
-          <h5 class="cardTitle" title="African Print Dress">${product.title}</h5>
-          <p>${product.description}</p>
-          <div class="itemPrice">
-              <h5>$${product.price}</h5>
-          </div>
-          <div class="colorTag">
-          <div class="stars">
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-        </div>
-              <button class="proCart" data-id="${product.id}">Buy</button>
-          </div>
-        </a>
-        <!-- single product ends here -->
-        `;
-      productArea.innerHTML = itemResult;
-    });
-
-    // add event listener to each product item
-    const productCards = document.querySelectorAll(".itemCard");
-    productCards.forEach((card) => {
-      card.addEventListener("click", () => {
-        const productId = card.dataset.id;
-        // retrieve the product object using the ID
-        const product = products.find((p) => p.id === productId);
-        this.displayProductDetails(product);
-      });
-    });
-  }
-
   filterProducts(products, sortBy, category) {
     let sortedProducts = [];
     if (category) {
@@ -612,7 +569,6 @@ document.addEventListener("DOMContentLoaded", () => {
   products
     .getProducts()
     .then((products) => {
-      ui.loadAllproducts(products);
       Storage.saveCartItems(products);
     })
     .then(() => {
