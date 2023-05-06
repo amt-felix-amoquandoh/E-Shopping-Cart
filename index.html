@@ -275,7 +275,13 @@
               <h6>Group by</h6>
               <i class="bi bi-node-minus-fill"></i>
             </div>
-            <li>Women<i id="women" class="bi bi-toggle2-off"></i></li>
+            <li>
+              Women<i
+                onclick="women()"
+                id="women"
+                class="bi bi-toggle2-off"
+              ></i>
+            </li>
             <li>Men<i id="men" class="bi bi-toggle2-off"></i></li>
             <li>Children<i id="allKids" class="bi bi-toggle2-off"></i></li>
           </div>
@@ -307,9 +313,9 @@
                 <ion-icon name="chevron-down-outline"></ion-icon>
               </button>
               <div class="sortOptions">
-                <li id="lowPrice">Lowest</li>
-                <li id="highest">Highest</li>
-                <li id="newest">Newest</li>
+                <li onclick="lowest()" id="lowPrice">Lowest</li>
+                <li onclick="highest()" id="highest">Highest</li>
+                <li onclick="newest()" id="newest">Newest</li>
               </div>
             </div>
           </div>

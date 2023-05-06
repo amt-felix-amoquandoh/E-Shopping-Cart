@@ -101,7 +101,7 @@ const women = async () => {
   womenOnly.classList.toggle("i_active");
   womenOnly.classList.toggle("bi-toggle2-off");
   womenOnly.classList.toggle("bi-toggle2-on");
-  // womenOnly.title = "clothesOff";
+  womenOnly.title = "womenOff";
 
   const products = await new Products().getProducts();
   const ui = new UI();
@@ -115,7 +115,7 @@ const men = async () => {
 
   const products = await new Products().getProducts();
   const ui = new UI();
-  ui.filterProducts(products, "men");
+  ui.filterProducts(products, "newest", "", "men");
 };
 const kidsAndAll = async () => {
   allKids.classList.toggle("i_active");
@@ -125,7 +125,7 @@ const kidsAndAll = async () => {
 
   const products = await new Products().getProducts();
   const ui = new UI();
-  ui.filterProducts(products, "kids");
+  ui.filterProducts(products, "newest", "", "kids");
 };
 
 const newest = async () => {
@@ -242,11 +242,13 @@ class UI {
     });
   }
 
-  filterProducts(products, sortBy, category) {
+  filterProducts(products, sortBy, id, category) {
     let sortedProducts = [];
-    if (category) {
-      sortedProducts = products.filter((product) =>
-        product.id.includes(category)
+    if (id) {
+      sortedProducts = products.filter((product) => product.id.includes(id));
+    } else if (category) {
+      sortedProducts = products.filter(
+        (product) => product.category === gender
       );
     } else {
       sortedProducts = [...products];
