@@ -208,7 +208,7 @@ class UI {
       itemResult += `
         <!-- single Product -->
         <a class="itemCard" data-id="${product.id}">
-          <img src=${product.image} alt="">
+          <img class="itemImage" src=${product.image} alt="">
           <h5 class="cardTitle" title="African Print Dress">${product.title}</h5>
           <p>${product.description}</p>
           <div class="itemPrice">
@@ -291,7 +291,6 @@ class UI {
   }
 
   displayProductDetails(product) {
-    console.log(`Product ${product.image} details displayed`);
     const modalContainer = document.querySelector(".modal-container");
     const closeModalBtn = document.querySelector("#close-modal-btn");
 
@@ -299,11 +298,8 @@ class UI {
 
     closeModalBtn.addEventListener("click", () => {
       modalContainer.classList.remove("show-modal");
-      modalContainer.removeChild(itemPage);
+      modalContainer.remove(itemPage);
     });
-
-    console.log(product);
-    const { id, title, description, price, image, brief } = product;
 
     let itemPage = document.createElement("div");
     itemPage.classList.add("productInfo");

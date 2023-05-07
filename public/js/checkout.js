@@ -1,12 +1,26 @@
-// window.onload = () => {
-//   if (!sessionStorage.user) {
-//     location.replace("/login");
-//   }
-// };
+window.onload = () => {
+  if (!sessionStorage.user) {
+    location.replace("/login");
+  }
+};
 
 const placeOrder = document.querySelector("#placeOrderBtn");
 placeOrder.addEventListener("click", () => {
   let address = getAddress();
+  //send to backend
+  fetch("/stripe-checkout", {
+    method: "post",
+    headers: new Headers({ "Content-Type": "application/json" }),
+    body: JSON.stringify({
+      items: JSON.parse(localStorage.getItem("cartBasket")),
+      address: address,
+      email: JSON.parse(sessionStorage.user).email,
+    }),
+  })
+    .then((res) => res.json())
+    .then((url) => {
+      console.log(url);
+    });
 });
 
 const getAddress = () => {

@@ -176,7 +176,27 @@ let stripeGateway = stripe(process.env.stripe_key);
 let DOMAIN = process.env.DOMAIN;
 
 app.post("/stripe-checkout", async (req, res) => {
-  const session = await stripeGateway.checkout.session.create({});
+  const session = await stripeGateway.checkout.sessions.create({
+    payment_method_types: ["card"],
+    mode: "payment",
+    success_url: `${DOMAIN}/success`,
+    cancel_url: `${DOMAIN}/checkout`,
+    line_items: req.body.items.map((item) => {
+      return {
+        price_data: {
+          currency: "usd",
+          product_data: {
+            name: item.title,
+            description: item.brief,
+            images: [item.image],
+          },
+          unit_amount: item.price * 100,
+        },
+        quantity: item.item,
+      };
+    }),
+  });
+  res.json(session.url);
 });
 
 //404 error
