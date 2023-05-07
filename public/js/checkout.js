@@ -10,7 +10,11 @@ placeOrder.addEventListener("click", () => {
   //send to backend
   fetch("/stripe-checkout", {
     method: "post",
-    headers: new Headers({ "Content-Type": "application/json" }),
+    headers: {
+      "Content-Type": "application/json",
+      Authorization:
+        "Bearer sk_test_51N4unvGDx25m1ticL5A4uE712tDAl50bgT2SGRywqJ3NDWqEuRjPNG3gTUff0vmoJc71dfDEGTHBxBE7OsYKHWyI00jW05Ft5k", // Replace with your actual API key
+    },
     body: JSON.stringify({
       items: JSON.parse(localStorage.getItem("cartBasket")),
       address: address,
