@@ -52,29 +52,3 @@ const showFormError = (err) => {
   errorElement.innerHTML = err;
   errorElement.classList.add("show");
 };
-
-const sendData = (path, data) => {
-  console.log(data);
-  fetch(path, {
-    method: "post",
-    headers: new Headers({ "Content-Type": "application/json" }),
-    body: JSON.stringify(data),
-  })
-    .then((res) => res.json())
-    .then((data) => processData(data));
-};
-
-const processData = (data) => {
-  loading.style.display = "none";
-  if (data.alert) {
-    showFormError(data.alert);
-  } else if (data.email) {
-    sessionStorage.user = JSON.stringify(data);
-    if (location.search.includes("after")) {
-      let pageId = location.search.split("=")[1];
-      location.replace(`./products/${pageId}`);
-    } else {
-      location.replace("/");
-    }
-  }
-};
