@@ -530,7 +530,7 @@ class UI {
     Storage.saveCart(cartBasket);
     let button = this.getOneButton(id);
     // button.disabled = false;
-    button.innerHTML = `Buy`;
+    // button.innerHTML = `Buy`;
   }
   getOneButton(id) {
     return addButtons.find((button) => button.dataset.id === id);
