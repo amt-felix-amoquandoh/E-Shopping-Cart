@@ -9,6 +9,7 @@ import {
   getDoc,
   updateDoc,
 } from "firebase/firestore";
+import stripe from "stripe";
 import nodemailer from "nodemailer";
 
 // Your web app's Firebase configuration
@@ -138,7 +139,7 @@ app.get("/addProduct", (req, res) => {
   res.sendFile("addProduct.html", { root: "public" });
 });
 
-//checkout
+//aboutus
 app.get("/aboutus", (req, res) => {
   res.sendFile("aboutus.html", { root: "public" });
 });
@@ -167,6 +168,15 @@ app.post("/order", (req, res) => {
     .then((data) => {
       res.json("done");
     });
+});
+
+//stripe
+let stripeGateway = stripe(process.env.stripe_key);
+
+let DOMAIN = process.env.DOMAIN;
+
+app.post("/stripe-checkout", async (req, res) => {
+  const session = await stripeGateway.checkout.session.create({});
 });
 
 //404 error
