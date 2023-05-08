@@ -1020,18 +1020,14 @@ button.white {
 
   #modal {
     overflow-y: scroll;
-    padding-top: 6.8rem;
+    padding-top: 4.8rem;
   }
 
-  .imageSlider {
-    padding-top: 4rem;
-  }
-
-  .productInfo {
-    width: 100%;
+  #modal .productInfo {
+    width: 90vw;
     flex-wrap: wrap;
     margin: 2rem 3px 1px 1px;
-    padding: 10px;
+    padding: 25px 10px;
   }
 
   .sizeRadioBtn {
@@ -1057,7 +1053,7 @@ button.white {
 
   .imageSlider {
     width: 100%;
-
+    padding-bottom: 0;
     background-position: center;
     margin: 0;
   }
@@ -1065,30 +1061,6 @@ button.white {
   .itemDetails {
     width: 100%;
     margin: 0;
-  }
-
-  /*  */
-  .shopCover h2,
-  .appointCover h2,
-  .aboutCover h2,
-  .ordersCover h2 {
-    margin-bottom: -10px;
-    font-size: 1.5rem;
-  }
-
-  .shopCover h5,
-  .appointCover h5,
-  .aboutCover h5,
-  .ordersCover h5 {
-    color: rgb(24, 24, 24);
-    font-size: 0.8rem;
-  }
-
-  .shopCoverContent,
-  .appointCoverContent,
-  .aboutCoverContent,
-  .ordersCoverContent {
-    padding: 10px;
   }
 
   .productDetails {
@@ -1109,21 +1081,26 @@ button.white {
   .productDetails .productDesc {
     width: 100%;
   }
+
+  #close-modal-btn {
+    position: absolute;
+    top: 80px;
+    right: 25px;
+  }
 }
 
 @media (max-device-width: 380px) {
   #modal .productInfo {
-    padding-top: 6rem;
-    padding-bottom: 3rem;
-    gap: -5px;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
     width: 90vw;
+    height: auto;
   }
 
   #close-modal-btn {
     position: absolute;
-    top: 25px;
+    top: 60px;
     right: 25px;
-    background: #1a1a1a;
   }
 
   .rating {
@@ -1141,7 +1118,9 @@ button.white {
   }
 
   .imageSlider {
-    padding-top: 8rem;
+    padding-top: 6rem;
+    margin-bottom: -30px;
+    height: 300px;
   }
 
   .itemPrice {
@@ -1150,6 +1129,11 @@ button.white {
 
   .itemDiscount {
     font-size: 14px;
+  }
+
+  .rating img {
+    height: 20px;
+    width: 20px;
   }
 
   .subHeading {
@@ -1163,6 +1147,6 @@ button.white {
   }
 
   #modal {
-    margin-top: 3.5rem;
+    margin-top: 2rem;
   }
 }
