@@ -456,6 +456,7 @@ button.white {
   border: none;
   outline: none;
   transition: 0.3s;
+  margin: 10px 1px;
 }
 
 .cartFooterButton:hover {
