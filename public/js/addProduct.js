@@ -25,9 +25,9 @@ function displayCartOverlay() {
 let durationButton = document.getElementById("durationSortBtn");
 let durationOptions = document.getElementsByClassName("sortOptions")[0];
 
-function durationSort() {
+durationButton.addEventListener("click", () => {
   durationOptions.classList.toggle("sortOptions_active");
-}
+});
 
 //...
 let newUploads = document.getElementById("newest");
@@ -242,11 +242,11 @@ class UI {
     });
   }
 
-  filterProducts(products, sortBy, id, category) {
+  filterProducts(products, sortBy, gender, category) {
     let sortedProducts = [];
-    if (id) {
+    if (category) {
       sortedProducts = products.filter((product) => product.id.includes(id));
-    } else if (category) {
+    } else if (gender) {
       sortedProducts = products.filter(
         (product) => product.category === gender
       );
