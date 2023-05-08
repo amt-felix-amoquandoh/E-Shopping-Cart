@@ -316,7 +316,7 @@ class UI {
         </div>
       </div>
       <div class="ItemDetails">
-        <h2 class="productBrand">${product.title}</h2>
+        <h2 style="display: none;" class="productBrand">${product.title}</h2>
         <h4 class="itemDescription"><b>${product.description}</b></h4>
         <p class="itemDescription">${product.brief}</p>
         <span class="itemPrice">$${product.price}</span>

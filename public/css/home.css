@@ -1113,8 +1113,21 @@ button.white {
 
 @media (max-device-width: 380px) {
   #modal .productInfo {
-    padding-top: 15rem;
+    padding-top: 6rem;
     padding-bottom: 3rem;
+    gap: -5px;
+    width: 90vw;
+  }
+
+  #close-modal-btn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: #1a1a1a;
+  }
+
+  .rating {
+    font-size: 10px;
   }
 
   .sizeRadioBtn {
@@ -1124,15 +1137,29 @@ button.white {
   }
 
   h2 {
-    font-size: 30px;
+    display: none;
   }
 
   .imageSlider {
     padding-top: 8rem;
   }
 
+  .itemPrice {
+    font-size: 20px;
+  }
+
+  .itemDiscount {
+    font-size: 14px;
+  }
+
+  .subHeading {
+    font-size: 15px;
+  }
+
   .btn {
-    width: 60%;
+    width: 45%;
+    padding: 10px;
+    font-size: 15px;
   }
 
   #modal {
