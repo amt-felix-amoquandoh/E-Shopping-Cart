@@ -40,6 +40,11 @@ app.get("/", (req, res) => {
   res.sendFile("index.html", { root: "./" });
 });
 
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "http://localhost:2003");
+  next();
+});
+
 app.listen(2003, () => {
   console.log("listening on port 2003");
 });
