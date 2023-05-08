@@ -42,7 +42,8 @@ let womenOnly = document.getElementById("women");
 let menOnly = document.getElementById("men");
 let allKids = document.getElementById("allKids");
 
-const clothes = async () => {
+clothesOnly.addEventListener("click", async () => {
+  console.log("ewhy");
   clothesOnly.classList.toggle("i_active");
   clothesOnly.classList.toggle("bi-toggle2-off");
   clothesOnly.classList.toggle("bi-toggle2-on");
@@ -51,7 +52,7 @@ const clothes = async () => {
   const products = await new Products().getProducts();
   const ui = new UI();
   ui.filterProducts(products, "clothes");
-};
+});
 
 const accessories = async () => {
   accessOnly.classList.toggle("i_active");

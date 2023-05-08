@@ -202,11 +202,11 @@ section .productsBox .mainProArea .itemCard .itemPrice h5 {
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0;
+  visibility: hidden;
 }
 
 .show-modal {
-  opacity: 1;
+  visibility: visible;
   z-index: 101;
 }
 
@@ -352,7 +352,7 @@ section .productsBox .mainProArea .itemCard .itemPrice h5 {
 }
 
 .btn {
-  width: 45% !important;
+  width: 45%;
   padding: 20px;
   border-radius: 5px;
   background: none;
