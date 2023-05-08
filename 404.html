@@ -19,40 +19,53 @@
   </head>
   <body>
     <!-- Project starts here-->
-   <!-- Nav Bar section -->
-   <section class="header" id="header">
-    <div class="logoBox">          
+    <!-- Nav Bar section -->
+    <section class="header" id="header">
+      <div onclick="window.location.href = './index.html'" class="logoBox">
         <img src="./public/img/icons/brand.png" class="navBrandImage" alt="" />
-      <h3><i>Kosafrique</i></h3>
-    </div>
-      <ul class="navItems" id="navItems">
-        <li><a href="./index.html" >Shop</a></li>
-        <li><a href="./aboutus.html" class="active">About Us</a></li>
-        <li class=""> <span class="loginArea" id="loginArea">
-         
-          <img width="40px" height="40px" src="./public/img/icons/user.png" 
-          class="userLogo" alt="">
-          
-          <div class="loginPopUp hide">
-            <p class="accountInfo">Logged in as, <b>name</b></p>
-            <button class="btn" id="userBtn">Log out</button>
-          </div>
-        </span>
-        <div class="mobileLogo hide">          
-          <img width="auto" height="90px" src="./public/img/icons/brand.png" class="navBrandImage" alt="" />
         <h3><i>Kosafrique</i></h3>
       </div>
+      <ul class="navItems" id="navItems">
+        <li><a href="./index.html">Shop</a></li>
+        <li><a href="./aboutus.html" class="active">About Us</a></li>
+        <li class="">
+          <span class="loginArea" id="loginArea">
+            <img
+              width="40px"
+              height="40px"
+              src="./public/img/icons/user.png"
+              class="userLogo"
+              alt=""
+            />
 
-        
-      </li>
+            <div class="loginPopUp hide">
+              <p class="accountInfo">Logged in as, <b>name</b></p>
+              <button class="btn" id="userBtn">Log out</button>
+            </div>
+          </span>
+          <div class="mobileLogo hide">
+            <img
+              width="auto"
+              height="90px"
+              src="./public/img/icons/brand.png"
+              class="navBrandImage"
+              alt=""
+            />
+            <h3><i>Kosafrique</i></h3>
+          </div>
+        </li>
         <li>
           <a href="">
             <div class="cartBox">
               <div class="carty">
-                <img src="./public/img/icons/shop-bag.png" class="shopIcon" alt="" />
+                <img
+                  src="./public/img/icons/shop-bag.png"
+                  class="shopIcon"
+                  alt=""
+                />
                 <div class="cartAmount" id="itemsUpdate">0</div>
-              </div>               
-          </div>
+              </div>
+            </div>
           </a>
         </li>
         <a href="#">
@@ -64,65 +77,83 @@
           ></ion-icon>
         </a>
       </ul>
-    
-    <div id="mobile" class="mobileNav">
-      <a class="mobileCart" href="./public/orders.html">
-        <div>
-          <div class="carty">
-            <img src="./public/img/icons/shop-bag.png" class="shopIcon" alt="" />
-            <div class="cartAmount" id="itemsUpdate">0</div>
-          </div>   
-        </div>
-      </a>
-      <img width="40px" height="40px" src="./public/img/icons/menu.png" id="mobileMenu"
-      class="mobileMenu" alt="">
-    </div>
-  </section>
-           <!--  -->
-<!-- Nav Bar section -->
 
-    <img src="./public/img/undraw_Page_not_found_re_e9o6.png" class="four0fourImg" alt="">
-    <p class="four0fourText">Looks like you are lost. Head back to our <a href="./index.html">Homepage</a></p>
+      <div id="mobile" class="mobileNav">
+        <a class="mobileCart" href="./public/orders.html">
+          <div>
+            <div class="carty">
+              <img
+                src="./public/img/icons/shop-bag.png"
+                class="shopIcon"
+                alt=""
+              />
+              <div class="cartAmount" id="itemsUpdate">0</div>
+            </div>
+          </div>
+        </a>
+        <img
+          width="40px"
+          height="40px"
+          src="./public/img/icons/menu.png"
+          id="mobileMenu"
+          class="mobileMenu"
+          alt=""
+        />
+      </div>
+    </section>
+    <!--  -->
+    <!-- Nav Bar section -->
 
-      
-          <!-- footere section -->
-<!-- newsletter section -->
-<section id="newsletter" class="newsletter section-p1 section-m1">
-  <div class="news">
-    <h4
-      class="animate__animated animate__bounce animate__repeat-3 animate__delay-4s"
-    >
-      Sign Up to see new Products.
-    </h4>
-    <p>
-      Get Social media and e-mail Updates <span>about the latest.</span>
+    <img
+      src="./public/img/undraw_Page_not_found_re_e9o6.png"
+      class="four0fourImg"
+      alt=""
+    />
+    <p class="four0fourText">
+      Looks like you are lost. Head back to our
+      <a href="./index.html">Homepage</a>
     </p>
-  </div>
-  <div class="signUpFrom">
-    <input type="text" placeholder="Add your email here" />
-    <button class="basic">Sign Up</button>
-  </div>
-</section>
-<!-- newsletter section ends here -->
 
-<!-- footere section -->
-<div id="footer">
-   <span class="copyright">&copy; 2023 KOSAFRIQUE, Inc. All rights reserved</span>
-</div>
-<!-- footere section ends here -->
+    <!-- footere section -->
+    <!-- newsletter section -->
+    <section id="newsletter" class="newsletter section-p1 section-m1">
+      <div class="news">
+        <h4
+          class="animate__animated animate__bounce animate__repeat-3 animate__delay-4s"
+        >
+          Sign Up to see new Products.
+        </h4>
+        <p>
+          Get Social media and e-mail Updates <span>about the latest.</span>
+        </p>
+      </div>
+      <div class="signUpFrom">
+        <input type="text" placeholder="Add your email here" />
+        <button class="basic">Sign Up</button>
+      </div>
+    </section>
+    <!-- newsletter section ends here -->
+
+    <!-- footere section -->
+    <div id="footer">
+      <span class="copyright"
+        >&copy; 2023 KOSAFRIQUE, Inc. All rights reserved</span
+      >
+    </div>
+    <!-- footere section ends here -->
 
     <!-- Project ends here-->
 
     <script
-    type="module"
-    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-  ></script>
-  <script
-    nomodule
-    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-  ></script>
-  
-  <script src="./public/js/home.js"></script>
-  <script src="./public/js/nav.js"></script>
-  </body>  
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script src="./public/js/home.js"></script>
+    <script src="./public/js/nav.js"></script>
+  </body>
 </html>

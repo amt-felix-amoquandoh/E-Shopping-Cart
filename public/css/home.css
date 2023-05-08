@@ -1099,8 +1099,9 @@ button.white {
 
   #close-modal-btn {
     position: absolute;
-    top: 60px;
+    top: 55px;
     right: 25px;
+    color: #1a1a1a;
   }
 
   .rating {
