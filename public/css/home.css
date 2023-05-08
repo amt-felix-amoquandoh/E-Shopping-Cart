@@ -1031,10 +1031,10 @@ button.white {
   }
 
   .sizeRadioBtn {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
 
-    line-height: 50px;
+    line-height: 40px;
 
     font-size: 12px;
   }
@@ -1086,6 +1086,11 @@ button.white {
     position: absolute;
     top: 80px;
     right: 25px;
+  }
+
+  .rating img {
+    height: 20px;
+    width: 20px;
   }
 }
 
