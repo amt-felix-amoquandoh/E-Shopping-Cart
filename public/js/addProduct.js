@@ -128,6 +128,17 @@ const kidsAndAll = async () => {
   const ui = new UI();
   ui.filterProducts(products, "kids");
 };
+womenOnly.addEventListener("click", async () => {
+  await women();
+});
+
+menOnly.addEventListener("click", async () => {
+  await men();
+});
+
+allKids.addEventListener("click", async () => {
+  await kidsAndAll();
+});
 
 const newest = async () => {
   durationButton.innerHTML = `
@@ -415,9 +426,11 @@ class UI {
     } else if (sortBy === "pillow") {
       // filter products by category (pillow only)
       sortedProducts = products.filter((item) => item.id === "pillow");
-    } else if (category === "women") {
+    } else if (sortBy === "women") {
       // filter products by category (women only)
-      sortedProducts = products.filter((item) => item.category === "women");
+      sortedProducts = products.filter(
+        (product) => product.category === "women"
+      );
     }
     this.loadAllproducts(sortedProducts);
   }
