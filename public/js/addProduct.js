@@ -65,7 +65,7 @@ const accessories = async () => {
   ui.filterProducts(products, "accessories");
 };
 
-const sportswear = async () => {
+const sportwear = async () => {
   sportsOnly.classList.toggle("i_active");
   sportsOnly.classList.toggle("bi-toggle2-off");
   sportsOnly.classList.toggle("bi-toggle2-on");
@@ -73,7 +73,7 @@ const sportswear = async () => {
 
   const products = await new Products().getProducts();
   const ui = new UI();
-  ui.filterProducts(products, "sportswear");
+  ui.filterProducts(products, "sportwear");
 };
 
 const lingerieOnly = async () => {
@@ -106,7 +106,7 @@ const women = async () => {
 
   const products = await new Products().getProducts();
   const ui = new UI();
-  ui.filterProducts(products, " newest", "", "women");
+  ui.filterProducts(products, "women");
 };
 const men = async () => {
   menOnly.classList.toggle("i_active");
@@ -116,7 +116,7 @@ const men = async () => {
 
   const products = await new Products().getProducts();
   const ui = new UI();
-  ui.filterProducts(products, "newest", "", "men");
+  ui.filterProducts(products, "men");
 };
 const kidsAndAll = async () => {
   allKids.classList.toggle("i_active");
@@ -126,7 +126,7 @@ const kidsAndAll = async () => {
 
   const products = await new Products().getProducts();
   const ui = new UI();
-  ui.filterProducts(products, "newest", "", "kids");
+  ui.filterProducts(products, "kids");
 };
 
 const newest = async () => {
@@ -243,64 +243,9 @@ class UI {
     });
   }
 
-  filterProducts(products, sortBy, gender, category) {
-    let sortedProducts = [];
-    if (category) {
-      sortedProducts = products.filter((product) => product.id.includes(id));
-    } else if (gender) {
-      sortedProducts = products.filter(
-        (product) => product.category === gender
-      );
-    } else {
-      sortedProducts = [...products];
-    }
-    if (sortBy === "newest") {
-      // sort by date added (most recent first)
-      sortedProducts = sortedProducts.sort((a, b) => {
-        return new Date(b.dateAdded) - new Date(a.dateAdded);
-      });
-    } else if (sortBy === "lowest") {
-      // sort by price (lowest first)
-      sortedProducts = sortedProducts.sort((a, b) => {
-        return a.price - b.price;
-      });
-    } else if (sortBy === "highest") {
-      // sort by price (highest first)
-      sortedProducts = sortedProducts.sort((a, b) => {
-        return b.price - a.price;
-      });
-    } else if (sortBy === "clothes") {
-      // filter products by category (clothes only)
-      sortedProducts = products.filter((item) => item.id === "clothes");
-    } else if (sortBy === "accessories") {
-      // filter products by category (accessories only)
-      sortedProducts = products.filter((item) => item.id === "accessories");
-    } else if (sortBy === "sportwear") {
-      // filter products by category (sportwear only)
-      sortedProducts = products.filter((item) => item.id === "sportwear");
-    } else if (sortBy === "lingerie") {
-      // filter products by category (lingerie only)
-      sortedProducts = products.filter((item) => item.id === "lingerie");
-    } else if (sortBy === "pillow") {
-      // filter products by category (pillow only)
-      sortedProducts = products.filter((item) => item.id === "pillow");
-    } else if (sortBy === "women") {
-      // filter products by category (women only)
-      sortedProducts = products.filter((item) => item.category === "women");
-    }
-    this.loadAllproducts(sortedProducts);
-  }
-
   displayProductDetails(product) {
     const modalContainer = document.querySelector(".modal-container");
     const closeModalBtn = document.querySelector("#close-modal-btn");
-
-    modalContainer.classList.add("show-modal");
-
-    closeModalBtn.addEventListener("click", () => {
-      modalContainer.classList.remove("show-modal");
-      modalContainer.remove(itemPage);
-    });
 
     let itemPage = document.createElement("div");
     itemPage.classList.add("productInfo");
@@ -342,8 +287,12 @@ class UI {
         <button class="btn cartButton" data-id=${product.id}>Add to Cart</button>
       </div>
     `;
-
     modalContainer.appendChild(itemPage);
+    modalContainer.classList.add("show-modal");
+    closeModalBtn.addEventListener("click", () => {
+      modalContainer.classList.remove("show-modal");
+      modalContainer.removeChild(itemPage);
+    });
 
     // Append the product page to the new window
     const imagesOfItems = document.querySelectorAll(".productImages img");
@@ -424,6 +373,55 @@ class UI {
       });
     });
   }
+
+  filterProducts(products, sortBy, category, id) {
+    let sortedProducts = [];
+    if (id) {
+      sortedProducts = products.filter((product) => product.id.includes(id));
+    } else if (category) {
+      sortedProducts = products.filter(
+        (product) => product.category === category
+      );
+    } else {
+      sortedProducts = [...products];
+    }
+    if (sortBy === "newest") {
+      // sort by date added (most recent first)
+      sortedProducts = sortedProducts.sort((a, b) => {
+        return new Date(b.dateAdded) - new Date(a.dateAdded);
+      });
+    } else if (sortBy === "lowest") {
+      // sort by price (lowest first)
+      sortedProducts = sortedProducts.sort((a, b) => {
+        return a.price - b.price;
+      });
+    } else if (sortBy === "highest") {
+      // sort by price (highest first)
+      sortedProducts = sortedProducts.sort((a, b) => {
+        return b.price - a.price;
+      });
+    } else if (sortBy === "clothes") {
+      // filter products by category (clothes only)
+      sortedProducts = products.filter((item) => item.id === "clothes");
+    } else if (sortBy === "accessories") {
+      // filter products by category (accessories only)
+      sortedProducts = products.filter((item) => item.id === "accessories");
+    } else if (sortBy === "sportwear") {
+      // filter products by category (sportwear only)
+      sortedProducts = products.filter((item) => item.id === "sportwear");
+    } else if (sortBy === "lingerie") {
+      // filter products by category (lingerie only)
+      sortedProducts = products.filter((item) => item.id === "lingerie");
+    } else if (sortBy === "pillow") {
+      // filter products by category (pillow only)
+      sortedProducts = products.filter((item) => item.id === "pillow");
+    } else if (category === "women") {
+      // filter products by category (women only)
+      sortedProducts = products.filter((item) => item.category === "women");
+    }
+    this.loadAllproducts(sortedProducts);
+  }
+
   getAddToCartBtns() {
     const addToCartButtons = [...document.querySelectorAll(".proCart")];
     addButtons = addToCartButtons;
