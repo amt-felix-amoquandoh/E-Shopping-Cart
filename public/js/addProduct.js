@@ -172,7 +172,7 @@ const highest = async () => {
   ui.filterProducts(products, "highest");
 };
 
-//...
+//https://kosafrique-backend-production.up.railway.app/store/products...
 // display products implementation
 class Products {
   async getProducts() {
