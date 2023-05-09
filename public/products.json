@@ -15,7 +15,7 @@
         "sizeXxlarge": "xxl",
         "price": 181.25,
         "image": {
-          "fields": { "file": { "url": "./public/img/clothes/c1.jpg" } }
+          "fields": { "file": { "url": "./img/clothes/c1.jpg" } }
         }
       }
     },
@@ -28,7 +28,7 @@
         "description": "African Bag with Accessories",
         "price": 34.33,
         "image": {
-          "fields": { "file": { "url": "./public/img/accessories/acc5.jpg" } }
+          "fields": { "file": { "url": "./img/accessories/acc5.jpg" } }
         }
       }
     },
@@ -41,7 +41,7 @@
         "description": "Accessory",
         "price": 18.25,
         "image": {
-          "fields": { "file": { "url": "./public/img/pillow/p1.webp" } }
+          "fields": { "file": { "url": "./img/pillow/p1.webp" } }
         }
       }
     },
@@ -60,7 +60,7 @@
         "sizeXxlarge": "xxl",
         "price": 72.09,
         "image": {
-          "fields": { "file": { "url": "./public/img/sportswear/sp1.jpg" } }
+          "fields": { "file": { "url": "./img/sportswear/sp1.jpg" } }
         }
       }
     },
@@ -79,7 +79,7 @@
         "sizeXxlarge": "xxl",
         "price": 65.44,
         "image": {
-          "fields": { "file": { "url": "./public/img/lingerie/l13.jpg" } }
+          "fields": { "file": { "url": "./img/lingerie/l13.jpg" } }
         }
       }
     },
@@ -92,7 +92,7 @@
         "description": "Accessory",
         "price": 18.25,
         "image": {
-          "fields": { "file": { "url": "./public/img/pillow/p2.webp" } }
+          "fields": { "file": { "url": "./img/pillow/p2.webp" } }
         }
       }
     },
@@ -111,7 +111,7 @@
         "sizeXxlarge": "xxl",
         "price": 181.25,
         "image": {
-          "fields": { "file": { "url": "./public/img/clothes/c2.jpg" } }
+          "fields": { "file": { "url": "./img/clothes/c2.jpg" } }
         }
       }
     },
@@ -124,7 +124,7 @@
         "description": "African Bag with Accessories",
         "price": 34.33,
         "image": {
-          "fields": { "file": { "url": "./public/img/accessories/acc2.jpg" } }
+          "fields": { "file": { "url": "./img/accessories/acc2.jpg" } }
         }
       }
     },
@@ -137,7 +137,7 @@
         "description": "Accessory",
         "price": 18.25,
         "image": {
-          "fields": { "file": { "url": "./public/img/pillow/p3.webp" } }
+          "fields": { "file": { "url": "./img/pillow/p3.webp" } }
         }
       }
     },
@@ -156,7 +156,7 @@
         "sizeXxlarge": "xxl",
         "price": 72.09,
         "image": {
-          "fields": { "file": { "url": "./public/img/sportswear/sp2.jpg" } }
+          "fields": { "file": { "url": "./img/sportswear/sp2.jpg" } }
         }
       }
     },
@@ -175,7 +175,7 @@
         "sizeXxlarge": "xxl",
         "price": 65.44,
         "image": {
-          "fields": { "file": { "url": "./public/img/lingerie/l6.jpg" } }
+          "fields": { "file": { "url": "./img/lingerie/l6.jpg" } }
         }
       }
     },
@@ -188,7 +188,7 @@
         "description": "Accessory",
         "price": 18.25,
         "image": {
-          "fields": { "file": { "url": "./public/img/pillow/p4.webp" } }
+          "fields": { "file": { "url": "./img/pillow/p4.webp" } }
         }
       }
     },
@@ -207,7 +207,7 @@
         "sizeXxlarge": "xxl",
         "price": 181.25,
         "image": {
-          "fields": { "file": { "url": "./public/img/clothes/c3.jpg" } }
+          "fields": { "file": { "url": "./img/clothes/c3.jpg" } }
         }
       }
     },
@@ -220,7 +220,7 @@
         "description": "African Bag with Accessories",
         "price": 34.33,
         "image": {
-          "fields": { "file": { "url": "./public/img/accessories/acc3.jpg" } }
+          "fields": { "file": { "url": "./img/accessories/acc3.jpg" } }
         }
       }
     },
@@ -239,7 +239,7 @@
         "sizeXxlarge": "xxl",
         "price": 72.09,
         "image": {
-          "fields": { "file": { "url": "./public/img/sportswear/sp3.jpg" } }
+          "fields": { "file": { "url": "./img/sportswear/sp3.jpg" } }
         }
       }
     },
@@ -252,7 +252,7 @@
         "description": "Accessory",
         "price": 18.25,
         "image": {
-          "fields": { "file": { "url": "./public/img/pillow/p5.jpeg" } }
+          "fields": { "file": { "url": "./img/pillow/p5.jpeg" } }
         }
       }
     },
@@ -271,7 +271,7 @@
         "sizeXxlarge": "xxl",
         "price": 65.44,
         "image": {
-          "fields": { "file": { "url": "./public/img/lingerie/l12.jpg" } }
+          "fields": { "file": { "url": "./img/lingerie/l12.jpg" } }
         }
       }
     },
@@ -290,7 +290,7 @@
         "sizeXxlarge": "xxl",
         "price": 181.25,
         "image": {
-          "fields": { "file": { "url": "./public/img/clothes/cl9.jpg" } }
+          "fields": { "file": { "url": "./img/clothes/cl9.jpg" } }
         }
       }
     },
@@ -303,7 +303,7 @@
         "description": "Accessory",
         "price": 18.25,
         "image": {
-          "fields": { "file": { "url": "./public/img/pillow/p6.jpeg" } }
+          "fields": { "file": { "url": "./img/pillow/p6.jpeg" } }
         }
       }
     },
@@ -316,7 +316,7 @@
         "brief": "lorem ipsum dolor aksd matic sderrfi dd lorem ipsum dolor",
         "price": 34.33,
         "image": {
-          "fields": { "file": { "url": "./public/img/accessories/acc7.jpg" } }
+          "fields": { "file": { "url": "./img/accessories/acc7.jpg" } }
         }
       }
     },
@@ -335,7 +335,7 @@
         "sizeXxlarge": "xxl",
         "price": 72.09,
         "image": {
-          "fields": { "file": { "url": "./public/img/sportswear/sp5.png" } }
+          "fields": { "file": { "url": "./img/sportswear/sp5.png" } }
         }
       }
     },
@@ -348,7 +348,7 @@
         "description": "Accessory",
         "price": 18.25,
         "image": {
-          "fields": { "file": { "url": "./public/img/pillow/p7.jpeg" } }
+          "fields": { "file": { "url": "./img/pillow/p7.jpeg" } }
         }
       }
     },
@@ -367,7 +367,7 @@
         "sizeXxlarge": "xxl",
         "price": 65.44,
         "image": {
-          "fields": { "file": { "url": "./public/img/lingerie/l15.png" } }
+          "fields": { "file": { "url": "./img/lingerie/l15.png" } }
         }
       }
     },
@@ -386,7 +386,7 @@
         "sizeXxlarge": "xxl",
         "price": 181.25,
         "image": {
-          "fields": { "file": { "url": "./public/img/clothes/c4.png" } }
+          "fields": { "file": { "url": "./img/clothes/c4.png" } }
         }
       }
     },
@@ -399,7 +399,7 @@
         "brief": "lorem ipsum dolor aksd matic sderrfi dd lorem ipsum dolor",
         "price": 34.33,
         "image": {
-          "fields": { "file": { "url": "./public/img/accessories/1.jpg" } }
+          "fields": { "file": { "url": "./img/accessories/1.jpg" } }
         }
       }
     },
@@ -412,7 +412,7 @@
         "description": "Accessory",
         "price": 18.25,
         "image": {
-          "fields": { "file": { "url": "./public/img/pillow/p8.jpeg" } }
+          "fields": { "file": { "url": "./img/pillow/p8.jpeg" } }
         }
       }
     },
@@ -431,7 +431,7 @@
         "sizeXxlarge": "xxl",
         "price": 72.09,
         "image": {
-          "fields": { "file": { "url": "./public/img/sportswear/sp6.jpeg" } }
+          "fields": { "file": { "url": "./img/sportswear/sp6.jpeg" } }
         }
       }
     },
@@ -450,7 +450,7 @@
         "sizeXxlarge": "xxl",
         "price": 65.44,
         "image": {
-          "fields": { "file": { "url": "./public/img/lingerie/l7.jpeg" } }
+          "fields": { "file": { "url": "./img/lingerie/l7.jpeg" } }
         }
       }
     }

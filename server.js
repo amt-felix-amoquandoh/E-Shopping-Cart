@@ -33,13 +33,13 @@ const app = express();
 app.use(cors());
 
 //middlewares
-app.use(express.static("./"));
+app.use(express.static("public"));
 app.use(express.json());
 
 //routes
 //home
 app.get("/", (req, res) => {
-  res.sendFile("index.html", { root: "./" });
+  res.sendFile("index.html", { root: "public" });
 });
 
 app.listen(2003, () => {
@@ -48,7 +48,7 @@ app.listen(2003, () => {
 
 //signup
 app.get("/signup", (req, res) => {
-  res.sendFile("signup.html", { root: "./" });
+  res.sendFile("signup.html", { root: "public" });
 });
 
 app.post("/signup", (req, res) => {
@@ -95,7 +95,7 @@ app.post("/signup", (req, res) => {
 });
 
 app.get("/login", (req, res) => {
-  res.sendFile("login.html", { root: "./" });
+  res.sendFile("login.html", { root: "public" });
 });
 
 app.post("/login", (req, res) => {
@@ -125,16 +125,6 @@ app.post("/login", (req, res) => {
       });
     }
   });
-});
-
-//seller route
-app.get("/search/:key", (req, res) => {
-  res.sendFile("search.html", { root: "./" });
-});
-
-//dashboard route
-app.get("/dashboard", (req, res) => {
-  res.sendFile("dashboard.html", { root: "./" });
 });
 
 //add product
@@ -204,7 +194,7 @@ app.post("/stripe-checkout", async (req, res) => {
 
 //404 error
 app.get("/404", (req, res) => {
-  res.sendFile("404.html", { root: "./" });
+  res.sendFile("404.html", { root: "public" });
 });
 
 app.use((req, res) => {
