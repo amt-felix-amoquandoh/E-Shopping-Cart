@@ -178,7 +178,7 @@ class Products {
   async getProducts() {
     try {
       let result = await fetch(
-        "https://medusa-backend-sample-production.up.railway.app/store/products"
+        " https://kosafrique-backend-production.up.railway.app/store/productscler"
       );
       let data = await result.json();
       let products = data.items;

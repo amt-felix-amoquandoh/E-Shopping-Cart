@@ -12,6 +12,7 @@ import {
 } from "firebase/firestore";
 import stripe from "stripe";
 import nodemailer from "nodemailer";
+import cors from "cors";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -29,6 +30,11 @@ const db = getFirestore();
 
 //init server
 const app = express();
+app.use(
+  cors({
+    origin: "http://localhost:2003",
+  })
+);
 
 //middlewares
 app.use(express.static("./"));
@@ -38,11 +44,6 @@ app.use(express.json());
 //home
 app.get("/", (req, res) => {
   res.sendFile("index.html", { root: "./" });
-});
-
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "http://localhost:2003");
-  next();
 });
 
 app.listen(2003, () => {
