@@ -177,9 +177,7 @@ const highest = async () => {
 class Products {
   async getProducts() {
     try {
-      let result = await fetch(
-        " https://kosafrique-backend-production.up.railway.app/store/productscler"
-      );
+      let result = await fetch("products.json");
       let data = await result.json();
       let products = data.items;
       products = products.map((item) => {
