@@ -76,13 +76,8 @@ const processData = (data) => {
   loading.style.display = "none";
   if (data.alert) {
     showFormError(data.alert);
-  } else if (data.email) {
+  } else if (data.name) {
     sessionStorage.user = JSON.stringify(data);
-    if (location.search.includes("after")) {
-      let pageId = location.search.split("=")[1];
-      location.replace(`./products/${pageId}`);
-    } else {
-      location.replace("/");
-    }
+    location.replace("./");
   }
 };
