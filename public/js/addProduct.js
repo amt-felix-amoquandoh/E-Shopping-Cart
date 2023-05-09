@@ -278,11 +278,11 @@ class UI {
         <span class="itemPrice">$${product.price}</span>
         <span class="itemDiscount">(50% Off)</span>
         <div class="rating">
-          <img src="./public/img/star-filled.png" class="star" alt="">
-          <img src="./public/img/star-filled.png" class="star" alt="">
-          <img src="./public/img/star-filled.png" class="star" alt="">
-          <img src="./public/img/star-filled.png" class="star" alt="">
-          <img src="./public/img/star.png" class="star" alt="">
+          <img src="./img/star-filled.png" class="star" alt="">
+          <img src="./img/star-filled.png" class="star" alt="">
+          <img src="./img/star-filled.png" class="star" alt="">
+          <img src="./img/star-filled.png" class="star" alt="">
+          <img src="./img/star.png" class="star" alt="">
         </div>
         <p class="subHeading">Select Size</p>
         <input type="radio" name="size" value="s" hidden id="sSize">

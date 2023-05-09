@@ -5,7 +5,7 @@ window.onload = () => {
   if (sessionStorage.user) {
     let user = JSON.parse(sessionStorage.user);
     if (user.email) {
-      location.replace("./index.html");
+      location.replace("../index.html");
     }
   }
 };
