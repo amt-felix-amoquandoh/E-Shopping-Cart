@@ -30,11 +30,7 @@ const db = getFirestore();
 
 //init server
 const app = express();
-app.use(
-  cors({
-    origin: "http://localhost:2003",
-  })
-);
+app.use(cors());
 
 //middlewares
 app.use(express.static("./"));
