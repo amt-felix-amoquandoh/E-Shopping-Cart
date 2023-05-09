@@ -33,7 +33,7 @@ submitForm.addEventListener("click", () => {
     } else {
       //submit form
       loading.style.display = "block";
-      sendData("/signup", {
+      sendData("./signup", {
         name: fullName.value,
         email: email.value,
         password: password.value,
@@ -47,7 +47,7 @@ submitForm.addEventListener("click", () => {
     } else {
       //submit form
       loading.style.display = "block";
-      sendData("/login", {
+      sendData("./login", {
         email: email.value,
         password: password.value,
       });
