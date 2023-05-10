@@ -187,14 +187,22 @@
   <script>
     function contactUs() {
       Email.send({
-        Host: "smtp.elasticmail.com",
+        Host: "smtp.elasticemail.com",
         Username: "paakowamoquandoh@gmail.com",
         Password: "9ADDA98C20CBDB641F5FA0894D7046724B5E",
-        To: "paakowamoquandoh@gmail.com",
+        To: "felix.amoquandoh@amalitech.org",
         From: document.getElementById("userEmail").value,
         Subject: "Contact Enquiry",
-        Body: "And this is the body",
-      }).then((message) => alert(message));
+        Body:
+          "Name:" +
+          document.getElementById("nameOfUser").value +
+          "<br> Email:" +
+          document.getElementById("userEmail").value +
+          "<br> Phone: " +
+          document.getElementById("phoneNumber").value +
+          "<br> Message: " +
+          document.getElementById("message").value,
+      }).then((message) => alert("Message Sent Successfully"));
     }
   </script>
 </html>
