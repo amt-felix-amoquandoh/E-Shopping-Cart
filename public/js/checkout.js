@@ -8,6 +8,18 @@ const placeOrder = document.querySelector("#placeOrderBtn");
 placeOrder.addEventListener("click", () => {
   let address = getAddress();
   //send to backend
+  if (address) {
+    let cartItems = document.querySelectorAll("#cartItems .cartItem");
+    let cartContent = "";
+
+    cartItems.forEach((item) => {
+      let title = item.querySelector("h4").textContent;
+      let price = item.querySelector("h5").textContent;
+      cartContent += `${title} - ${price}\n`;
+    });
+
+    alert("Order successful!\n\nItems:\n" + cartContent);
+  }
 });
 
 const getAddress = () => {
