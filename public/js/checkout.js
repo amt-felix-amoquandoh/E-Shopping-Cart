@@ -7,18 +7,10 @@ window.onload = () => {
 const placeOrder = document.querySelector("#placeOrderBtn");
 placeOrder.addEventListener("click", () => {
   let address = getAddress();
+  let popsy = document.querySelector("#popsy");
   //send to backend
   if (address) {
-    let cartItems = document.querySelectorAll("#cartItems .cartItem");
-    let cartContent = "";
-
-    cartItems.forEach((item) => {
-      let title = item.querySelector("h4").textContent;
-      let price = item.querySelector("h5").textContent;
-      cartContent += `${title} - ${price}\n`;
-    });
-
-    alert("Order successful!\n\nItems:\n" + cartContent);
+    alert("moda");
   }
 });
 
@@ -40,6 +32,12 @@ const getAddress = () => {
     !landmark.length
   ) {
     return showFormError("fill all inputs first");
+  } else {
+    let popsy = document.querySelector("#popsy");
+    popsy.classList.add("open");
+    function closePopsy() {
+      popsy.classList.remove("open");
+    }
   }
 };
 

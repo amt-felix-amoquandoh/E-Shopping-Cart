@@ -27,7 +27,7 @@ function displayCartOverlay() {
 class Products {
   async getProducts() {
     try {
-      let result = await fetch("");
+      let result = await fetch("products.json");
       let data = await result.json();
       let products = data.items;
       products = products.map((item) => {

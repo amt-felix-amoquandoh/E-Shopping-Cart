@@ -132,8 +132,16 @@
         <button class="cartFooterButton" disabled>Clear Cart</button>
         <div class="popBox">
           <button id="placeOrderBtn" class="checkoutButton">Place Order</button>
-          <div class="popUp">
-            <img src="./img/" alt="" />
+          <div class="popUp" id="popsy">
+            <img src="./img/checked.png" width="150px" height="auto" alt="" />
+            <h2>Thank you</h2>
+            <p>
+              Your Details has been successfully submitted, please contact us
+              for payment and delivery
+            </p>
+            <button>
+              <a href="./aboutus.html" onclick="closePopsy()">Contact us</a>
+            </button>
           </div>
         </div>
       </div>
@@ -186,4 +194,10 @@
   <script src="./js/nav.js"></script>
   <script src="./js/common.js"></script>
   <script src="./js/checkout.js"></script>
+  <script>
+    let popsy = document.querySelector("#popsy");
+    function closePopsy() {
+      popsy.classList.remove("open");
+    }
+  </script>
 </html>
