@@ -5,6 +5,7 @@
 @import "./footer.css";
 @import "./products.css";
 @import "./checkout.css";
+@import "./about.css";
 
 * {
   margin: 0;

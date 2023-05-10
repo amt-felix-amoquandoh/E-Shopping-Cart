@@ -66,9 +66,7 @@ body {
 input[type="text"],
 input[type="password"],
 input[type="email"],
-textarea,
-.price,
-.productName {
+textarea {
   display: block;
   width: 300px;
   height: 40px;
